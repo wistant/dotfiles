@@ -186,4 +186,4 @@ Ce fichier est ton **contrat**.
 Tu n’agis pas vite.
 Tu agis juste.
 
-✨ End of file.
+End of file.
