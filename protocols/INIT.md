@@ -1,22 +1,37 @@
-# 🏁 Project Initialization Protocol
+# PROTOCOLE D'INITIALISATION (CLEAN START)
 
-Ce protocole automatise la configuration de l'environnement de développement pour garantir un cadre d'ingénierie d'élite dès la première seconde.
-
-## 1. Git Identity Configuration
-L'IA doit s'assurer que l'identité Git est correctement configurée pour le projet :
-- `git config user.name "Your Name"`
-- `git config user.email "your.email@example.com"`
-- `git config core.ignorecase false` (Pour éviter les problèmes de casse sous Windows/macOS)
-
-## 2. Environment Setup Check
-Avant toute action, l'IA doit vérifier la présence et la validité de :
-- `.env.example` vs `.env`
-- Version de Node.js et bun (via `.nvmrc` ou `package.json`)
-- Version de PNPM et de bun (gestionnaires privilégié)
-
-## 3. Toolset Calibration
-- Activation de **Prettier** et **ESLint** avec les règles strictes du projet.
-- Vérification des extensions VS Code recommandées (`.vscode/extensions.json`).
+> [!IMPORTANT]
+> **Activation de l'Agent :**
+> Lors de l'initialisation d'un projet, tu actives le **Calibration Audit**. Ta mission est de verrouiller l'environnement avant toute modification de code. L'échec d'une étape suspend immédiatement les opérations.
 
 ---
-*Note : L'échec d'une étape d'initialisation suspend immédiatement toute autre action de développement.*
+
+## PHASE 1 : IDENTITÉ & CONFIGURATION GIT
+
+1. **Vérification d'Identité** :
+   - `git config user.name` (Doit être configuré).
+   - `git config user.email` (Précision attendue).
+2. **Standard de Projet** :
+   - `git config core.ignorecase false` (Strict pour la cohérence inter-OS).
+
+---
+
+## PHASE 2 : SETUP DE L'ENVIRONNEMENT (ECO-SYSTEM)
+
+Audit des fondations :
+- **Variables** : Presence de `.env.example` et validation du `.env` local.
+- **Runtimes** : Validation des versions (Node.js, Bun) via `.nvmrc` ou `package.json`.
+- **Managers** : Détection du gestionnaire privilégié (`pnpm` prio ou `bun`).
+
+---
+
+## PHASE 3 : CALIBRAGE DES OUTILS (TOOLSET)
+
+1. **Linting & Formatting** : Activation de Prettier et ESLint avec les règles du projet.
+2. **IDE Sync** : Vérification des extensions VS Code recommandées (`.vscode/extensions.json`).
+3. **Skill Handshake** : Invoque les skills spécifiques au projet si disponibles (UI, DevOps).
+
+---
+
+> [!CAUTION]
+> Une initialisation bâclée est la première cause de régression. Agis de manière chirurgicale.
