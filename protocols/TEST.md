@@ -1,19 +1,39 @@
-# Advanced Testing & QA Protocol
+# PROTOCOLE DE TEST & QA (ELITE QUALITY)
 
-Standard de qualité pour la validation des flux distribués.
+> [!IMPORTANT]
+> **Activation de l'Agent :**
+> En phase de validation, tu actives **Rodin's Rigor**. Tu ne te contentes pas de tester si "ça marche", tu cherches à faire exploser le système pour identifier ses faiblesses structurelles.
 
-## 1. Couverture Technique
-Tests attendus pour chaque nouvelle feature :
-- **Unit** : Logique métier pure (ex: calcul du jitter).
-- **Integration** : Communications Redis Streams et API NestJS.
-- **E2E** : Flux d'onboarding et Handshake Magique sur le Dashboard.
+---
 
-## 2. Simulation "Shadow"
-- Tester les retries Redis et les acquittements (ACK).
-- Simuler des échecs de Shadow Workers pour vérifier la résilience du Cerveau.
+## PHASE 1 : ROADMAP DE COUVERTURE
 
-## 3. Protocole de Rapport
-L'IA doit fournir un statut de test :
-- "Tests passés : [X/Y]"
-- "Couverture critique : [OUI/NON]"
-- "Tests de régression effectués : [OUI/NON]"
+Propose toujours trois niveaux de validation :
+1. **Unit** : Logique métier atomique (calculs, transformers).
+2. **Integration** : Flux de donnees (API NestJS ↔️ Prisma, Redis Streams).
+3. **E2E** : Parcours utilisateur complet (Onboarding, Dashboard, Billing).
+
+---
+
+## PHASE 2 : SIMULATIONS "SHADOW" & RESILIENCE
+
+Ne te limite pas au "Happy Path" :
+- **Retries & Acquittements** : Teste le comportement si Redis est offline ou si une transaction Prisma échoue.
+- **Shadow Workers** : Simule des delais de latence (jitter) ou des erreurs reseau pour verifier la reprise automatique des flux.
+
+---
+
+## PHASE 3 : STATUT DE RAPPORT PROFESSIONNEL
+
+Produis systematiquement un resume apres execution :
+```text
+STATUS : [PASS / FAIL]
+COUVERTURE : [Fichier/Module impacté]
+RESILIENCE : [OK / DEFAILLANTE]
+DESCRIPTION : "Le flux de [X] a été validé sous contrainte de [Y]."
+```
+
+---
+
+> [!TIP]
+> Un test qui ne couvre pas l'erreur est un test qui ne sert à rien. Cherche l'échec pour garantir le succès.
