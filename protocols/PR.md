@@ -1,36 +1,38 @@
 # UNIVERSAL PULL REQUEST PROTOCOL (AI-SYNC)
 
-Ce document définit le standard d'excellence pour la préparation des Pull Requests avec synchronisation forcée et audit métier.
+> [!IMPORTANT]
+> **Activation de l'Agent :**
+> Lors de la preparation d'une PR, tu deviens le **Gatekeeper Architectural**. Tu dois vérifier que le code local est parfaitement synchronise avec le distant et que les protocoles amont (`COMMIT.md`, `SECURITY.md`) ont ete respectes scrupuleusement.
 
 ---
 
-## Étape 1 : Validation Atomique & Synchronisation (CRITICAL)
+## Etape 1 : Validation Atomique & Synchronisation (CRITICAL)
 
-Dès que l'utilisateur demande une PR, l'IA **DOIT** exécuter cette séquence dans l'ordre :
+Des que l'utilisateur demande une PR, l'IA **DOIT** executer cette sequence dans l'ordre :
 
 0. **Audit des Commits** :
-   - Vérifier que les modifications (git diff/status) ont bien été découpées selon le protocole `.protocols/COMMIT.md` (aucun `git add .` global).
-1. **Vérification Distante** :
+   - Vérifier que les modifications (git diff/status) ont bien ete decoupees selon le protocole `protocols/COMMIT.md` (aucun `git add .` global).
+1. **Verification Distante** :
    - `git fetch origin`
    - `git log HEAD..origin/dev` : Alerte si des commits distants manquent.
-2. **Analyse Différentielle** :
+2. **Analyse Differentielle** :
    - `git log origin/dev..HEAD --oneline`
    - `git diff --stat origin/dev..HEAD`
 3. **Audit des Protocols** :
-   - Vérifier que la sécurité respecte `.protocols/SECURITY.md`.
+   - Vérifier que la securite respecte `protocols/SECURITY.md`.
 
 ---
 
-## Étape 2 : Génération Automatique du Rapport
+## Etape 2 : Generation Automatique du Rapport
 
-Une fois la synchronisation validée, l'IA doit générer de façon autonome un fichier d'audit listant les travaux :
+Une fois la synchronisation validee, l'IA doit generer de facon autonome un fichier d'audit listant les travaux :
 
-- **Location** : Le fichier doit être créé sous `zothers/PR[Numéro].md` (incrémenter le numéro par rapport à l'existant).
-- **Langue** : 🇬🇧 **STRICTEMENT EN ANGLAIS**. Même si la conversation se déroule en français, le fichier PR doit être rédigé en anglais professionnel.
+- **Location** : Le fichier doit etre cree sous `zothers/PR[Numero].md` (incrementer le numero par rapport a l'existant).
+- **Langue** : STRICTEMENT EN ANGLAIS. Meme si la conversation se deroule en francais, le fichier PR doit etre redige en anglais professionnel.
 
 ---
 
-## Étape 3 : Structure du Document PR Élite
+## Etape 3 : Structure du Document PR Elite
 
 ### Title: type(scope): Elite Technical Description
 
@@ -40,9 +42,9 @@ Une fois la synchronisation validée, l'IA doit générer de façon autonome un 
 
 ### Granular Modifications
 
-- **[Composant]** : Détails précis des changements.
+- **[Composant]** : Details precis des changements.
 - **[Automation]** : Nouveaux protocoles ou scripts introduits.
 
 ### Sync Status & Readiness
 
-- Rapport d'état local vs distant et score de préparation.
+- Rapport d'etat local vs distant et score de preparation.
