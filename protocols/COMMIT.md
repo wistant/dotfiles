@@ -1,26 +1,37 @@
-# 🪶 Convention de Commits & Versioning
+# CONVENTION DE COMMITS ATOMIQUES
 
-## 🚫 Règle d'Or : Zéro "git add ."
-
-Il est srictement **INTERDIT** d'utiliser `git add .` ou `git commit -a`.
-Chaque changement doit être atomique et ciblé. On ne mélange pas des torchons et des serviettes.
-Tu dois voir les changements concrets apportes.. tu vois ?? je peux avoir change editer un fichier pour deux raions. Et les deux raisons doivent etre notee dans le commits.
-
-## 🎯 Stratégie de Commit Atomique
-Un commit doit correspondre à **UNE** intention logique.
-Si j'ai modifié 3 fichiers pour 3 raisons différentes -> **3 COMMITS DIFFÉRENTS**.
-
-### Procédure Obligatoire
-1. **Identifier** les fichiers modifiés (`git status`).
-2. **Grouper** les fichiers par logique (ex: tous les fichiers liés au composant `Button`).
-3. **Cibler** uniquement ces fichiers (`git add src/components/ui/button.tsx`).
-4. **Commiter** avec un message précis.
-5. **Répéter** jusqu'à ce que la staging area soit vide.
-6. **Verification** faire un dernier (`git status`) pour voir si le versioning est vide et bien complet
+> [!IMPORTANT]
+> **Activation de l'Agent :**
+> Des que l'utilisateur entame une phase de commit, tu actives le **Rodin Audit**. Ta mission est de refuser tout commit "fourre-tout". Tu dois forcer la decomposition des changements en intentions logiques isolees.
 
 ---
 
-## 📝 Format du Message
+## Regle d'Or : Zero "git add ."
+
+Il est **STRICTEMENT INTERDIT** d'utiliser `git add .` ou `git commit -a`. 
+Chaque modification doit etre atomique. On ne melange pas la logique métier (`core/`) et le style (`ui/`).
+
+---
+
+## METHODOLOGIE : LE CYCLE ATOMIQUE
+
+### PHASE 1 : L'AUDIT D'INTENTION (Silent)
+1. **Status Check** : Examine `git status` et `git diff`.
+2. **Identification des Motifs** : Pourquoi as-tu fait ces changements ?
+3. **Partitionnement** : Separe les changements techniques (refactor, deps) des changements fonctionnels (feat, fix).
+
+### PHASE 2 : L'INTERROGATION SOCRATIQUE
+Si l'utilisateur semble vouloir tout commiter d'un coup, pose la question :
+> *"Je vois des changements sur [Fichier A] et [Fichier B]. Sont-ils lies par une seule intention logique, ou devons-nous les separer en deux commits distincts pour preserver l'historique ?"*
+
+### PHASE 3 : GROUPEMENT & STAGING CIBLE
+1. **Selection** : Ajoute uniquement les fichiers lies au motif n°1.
+2. **Commande** : `git add [fichiers specifiques]`.
+3. **Verification** : Effectue un `git status` pour valider que seule l'intention n°1 est dans le buffer.
+
+---
+
+## Format du Message
 Chaque commit doit suivre strictement ce format :
 
 ```text
@@ -31,33 +42,33 @@ Chaque commit doit suivre strictement ce format :
 [Footer]
 ```
 
-#### 1️⃣ Types Autorisés
-- `feat`: Nouvelle fonctionnalité (ajoute de la valeur utilisateur).
-- `fix`: Correction de bug (répare quelque chose de cassé).
+#### 1. Types Autorises
+- `feat`: Nouvelle fonctionnalite (ajoute de la valeur utilisateur).
+- `fix`: Correction de bug (repare quelque chose de casse).
 - `ui`: Changement purement visuel (CSS, style, assets) sans impact logique.
-- `refactor`: Réécriture de code (ni fix ni feat, ex: nettoyage, simplification).
-- `perf`: Amélioration des performances.
+- `refactor`: Reecriture de code (ni fix ni feat, ex: nettoyage, simplification).
+- `perf`: Amelioration des performances.
 - `docs`: Documentation uniquement.
 - `test`: Ajout ou modification de tests.
-- `chore`: Maintenance, build, dépendances (pas de code de prod).
+- `chore`: Maintenance, build, dependances (pas de code de prod).
 - `style`: Formatage, espaces manquants (pas de changement de logique).
 
-#### 2️⃣ Scope (Portée)
-Le fichier ou module impacté. Exemples : `(auth)`, `(ui)`, `(deps)`, `(api)`, `(hooks)`.
+#### 2. Scope (Portee)
+Le fichier ou module impacte. Exemples : `(auth)`, `(ui)`, `(deps)`, `(api)`, `(hooks)`.
 
-### 3️⃣ Sujet
-- Impératif présent ("add" et non "added").
-- Pas de majuscule au début.
-- Pas de point à la fin.
+### 3. Sujet
+- Imperatif present ("add" et non "added").
+- Pas de majuscule au debut.
+- Pas de point a la fin.
 - Clair et concis.
 
 ### Exemples de Bons Commits
-✅ `feat(hooks): add use-media-query for responsive logic`
-✅ `fix(ui): resolve typescript error in 3d-card component`
-✅ `chore(deps): upgrade prisma to v7`
+- feat(hooks): add use-media-query for responsive logic
+- fix(ui): resolve typescript error in 3d-card component
+- chore(deps): upgrade prisma to v7
 
-### Exemples à BANNIR ⛔
-❌ `fix bugs` (Trop vague)
-❌ `wip` (Interdit sur main/dev)
-❌ `update files` (Ne veut rien dire)
+### Exemples a BANNIR
+- fix bugs (Trop vague)
+- wip (Interdit sur main/dev)
+- update files (Ne veut rien dire)
 
