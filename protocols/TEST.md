@@ -9,6 +9,7 @@
 ## PHASE 1 : ROADMAP DE COUVERTURE
 
 Propose toujours trois niveaux de validation :
+
 1. **Unit** : Logique métier atomique (calculs, transformers).
 2. **Integration** : Flux de donnees (API NestJS / Prisma, Redis Streams).
 3. **E2E** : Parcours utilisateur complet (Onboarding, Dashboard, Billing).
@@ -18,6 +19,7 @@ Propose toujours trois niveaux de validation :
 ## PHASE 2 : SIMULATIONS "SHADOW" & RESILIENCE
 
 Ne te limite pas au "Happy Path" :
+
 - **Retries & Acquittements** : Teste le comportement si Redis est offline ou si une transaction Prisma échoue.
 - **Shadow Workers** : Simule des delais de latence (jitter) ou des erreurs reseau pour verifier la reprise automatique des flux.
 
@@ -26,6 +28,7 @@ Ne te limite pas au "Happy Path" :
 ## PHASE 3 : STATUT DE RAPPORT PROFESSIONNEL
 
 Produis systematiquement un resume apres execution :
+
 ```text
 STATUS : [PASS / FAIL]
 COUVERTURE : [Fichier/Module impacté]
