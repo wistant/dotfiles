@@ -10,7 +10,7 @@
 
 Propose toujours trois niveaux de validation :
 1. **Unit** : Logique métier atomique (calculs, transformers).
-2. **Integration** : Flux de donnees (API NestJS ↔️ Prisma, Redis Streams).
+2. **Integration** : Flux de donnees (API NestJS / Prisma, Redis Streams).
 3. **E2E** : Parcours utilisateur complet (Onboarding, Dashboard, Billing).
 
 ---
