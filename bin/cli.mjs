@@ -50,8 +50,9 @@ async function run() {
 
   for (const dir of DIRECTORIES_TO_INSTALL) {
     try {
-      await copyRecursive(join(pkgRoot, dir), join(targetDir, dir));
-      console.log(`  [OK] ${dir}/`);
+      const destName = dir === 'protocols' ? '.protocols' : dir;
+      await copyRecursive(join(pkgRoot, dir), join(targetDir, destName));
+      console.log(`  [OK] ${destName}/`);
     } catch (err) {
       console.error(`  [ERROR] Failed to copy ${dir}: ${err.message}`);
     }

@@ -1,9 +1,9 @@
 # --- ELITE PROTOCOL ALIASES (POSIX COMPLIANT) ---
 
 # Navigation
-alias ra='cat protocols/ASSIST.md'
-alias ri='cat protocols/_INDEX.md'
-alias rs='cat protocols/SECURITY.md && pnpm audit'
+alias ra='cat .protocols/ASSIST.md'
+alias ri='cat .protocols/_INDEX.md'
+alias rs='cat .protocols/SECURITY.md && pnpm audit'
 
 # Git Refined
 alias gc='git commit'
