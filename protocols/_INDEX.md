@@ -20,6 +20,7 @@
 | **Security, Secrets, Deps** | [SECURITY.md](./SECURITY.md) | Zero-Token integrity, dependency audit, isolation check. |
 | **Testing, QA, Resilience** | [TEST.md](./TEST.md) | Multi-level coverage, shadow simulations, resilience rapport. |
 | **Setup, New Project** | [INIT.md](./INIT.md) | Project initialization and stack calibration. |
+| **Dotfiles, Env Maintenance** | [DOTFILES.md](./DOTFILES.md) | System OS for AI-Pairing, shell integration, git templates. |
 
 ---
 

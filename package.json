@@ -1,0 +1,32 @@
+{
+  "name": "@wistant/dotfiles",
+  "version": "1.0.0",
+  "description": "Elite Cyber-Premium Dotfiles & Protocols",
+  "type": "module",
+  "bin": {
+    "wistant-dotfiles": "bin/cli.mjs"
+  },
+  "main": "index.js",
+  "files": [
+    ".gitignore",
+    "aliases.sh",
+    "aliases.zsh",
+    "gitmessage",
+    "myKDEshorcuts.kksrc",
+    "protocols",
+    "bin"
+  ],
+  "scripts": {
+    "setup": "node bin/cli.mjs",
+    "audit": "sh ./protocols/SECURITY.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wistant",
+    "dotfiles",
+    "protocols",
+    "cyber-premium"
+  ],
+  "author": "Wistant & Elite Team",
+  "license": "ISC"
+}
