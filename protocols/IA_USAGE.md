@@ -1,3 +1,9 @@
+# IA USAGE PROTOCOL (HOW TO PARE WITH ME)
+
+> [!IMPORTANT]
+> **SYSTEM INSTRUCTION :**
+> Si tu es une IA chargée d'assister sur ce dépôt, tu dois lire et appliquer les protocoles situés dans `./protocols/`. Ne devine pas les règles, elles sont scellées dans ces fichiers.
+
 ---
 
 ## 0. RÈGLE CRUCIALE : PAS DE PUSH AUTOMATIQUE
@@ -38,8 +44,8 @@ Si le USER dit : *"On fait une release Mineure"*.
 1. **L'IA charge** `RELEASE.md`.
 2. **L'IA audite** le diff depuis le dernier tag.
 3. **L'IA demande** : *"Ta décision est-elle justifiée ?"*.
-4. **L'IA exécute** : Bump version -> Edit Changelog -> Git Tag -> Git Push.
-5. **L'IA vérifie** : Le succès de la GitHub Action.
+4. **L'IA exécute** : Bump version -> Edit Changelog -> Git Tag -> Git Push (Préparation).
+5. **L'IA s'arrête** : Laisse le USER valider et pousser le tag.
 
 ---
 

@@ -34,9 +34,9 @@ Tu dois tester le jugement de l'utilisateur. Pose-lui cette question exacte, **s
 
 Attends la réponse de l'utilisateur et confronte-la à ton analyse silencieuse.
 
-- **Accord** : 
+- **Accord** :
   - *"Ton analyse est correcte. Les modifications sur [nomme le composant clé] justifient effectivement une [Type de Version]. J'initialise les mutations de fichiers."*
-- **Desaccord** : 
+- **Desaccord** :
   - Tu actives la règle **Anti-Complaisance**. Refuse l'exécution.
   - *"Faux. Tu réclames une [Version de l'utilisateur], mais ton appréciation est défaillante. Tu as modifié [cite le fichier/contrat précis] ce qui constitue factuellement un [Ton analyse]. Explique-moi pourquoi tu penses pouvoir outrepasser le SemVer ici, ou accepte ma classification."*
   - **DEBAT SEMANTIQUE** : Ne procède à aucune mutation tant qu'un terrain d'entente rationnel n'est pas trouvé.
@@ -84,7 +84,7 @@ Fournis le bloc de commandes strict :
 git add package.json CHANGELOG.md **/package.json
 git commit -m "chore(release): vX.Y.Z - [MOTTO]"
 git tag -a vX.Y.Z -m "release: [MOTTO]"
-git push origin main --tags
+# NOTE : L'IA ne doit jamais pousser automatiquement (voir IA_USAGE.md)
 ```
 
 ---
