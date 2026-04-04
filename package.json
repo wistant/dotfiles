@@ -1,7 +1,7 @@
 {
   "name": "@wistantkode/dotfiles",
   "version": "1.0.0",
-  "description": "Elite Cyber-Premium Dotfiles & Protocols",
+  "description": "Modular dotfiles, shell aliases, and development protocols for a streamlined Linux environment.",
   "type": "module",
   "bin": {
     "wistant-dotfiles": "bin/cli.mjs"
@@ -27,8 +27,9 @@
     "wistantkode",
     "dotfiles",
     "protocols",
-    "cyber-premium"
+    "configuration",
+    "shell"
   ],
-  "author": "Wistantkode & Elite Team",
+  "author": "Wistantkode",
   "license": "ISC"
 }
