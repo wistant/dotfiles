@@ -1,12 +1,12 @@
 <div align="center">
   <br />
-  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="180" />
+  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="160" />
   <h1>@wistantkode/dotfiles</h1>
-  <p><b>High-End Engineering Infrastructure & Socratic Protocols</b></p>
+  <p><b>Infrastructure-as-Code — System Protocols & Automated Synchronization</b></p>
   
   <p>
     <a href="https://www.npmjs.com/package/@wistantkode/dotfiles">
-      <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=for-the-badge&color=D12121&logo=npm" alt="npm version" />
+      <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=for-the-badge&color=CC0000&logo=npm" alt="npm version" />
     </a>
     <a href="https://pnpm.io">
       <img src="https://img.shields.io/badge/pnpm-4AB6FA?style=for-the-badge&logo=pnpm&logoColor=white" alt="pnpm" />
@@ -19,9 +19,9 @@
 
 ---
 
-## 🏛️ The Infrastructure Architecture
+## Infrastructure Architecture
 
-Contrary to standard dotfiles, this repository functions as an **Automated Distribution System**. It treats your configuration as **Infrastructure-as-Code**, governed by strict engineering standards.
+This repository operates as an automated distribution system for personal Linux environments. It treats configuration as an engineering asset, governed by strict socratic and architectural protocols.
 
 ```mermaid
 graph TD
@@ -32,52 +32,54 @@ graph TD
     E -- Initialization --> F[Local .protocols/]
 ```
 
-### Core Components
+### System Components
 
-- **Smart Oracle (`github.sh`)**: An interactive synchronizer that performs a "Tag Delta" audit before any projection to GitHub.
-- **Integrity Protocols**: A set of hidden guides (`.protocols/`) that force the AI and the user to maintain a pure, atomic history.
-- **CI/CD Pipeline**: fully automated distribution workflow ensuring every public version is audited and secure.
+- **Synchronization Module (`github.sh`)**: An interactive synchronizer performing Tag Delta audits and branch state verification before any remote projection.
+- **Architectural Protocols**: Technical guides located in `.protocols/` that enforce atomic history and engineering integrity.
+- **Automated Pipeline**: CI/CD workflows ensuring every public release is audited, secure, and distributed via NPM.
 
 ---
 
-## 🚀 Instant Deployment
+## Deployment
 
-Deploy your professional baseline on any Linux environment without cloning:
+Deploy the infrastructure baseline on any Linux environment:
 
 ```bash
 pnpm dlx @wistantkode/dotfiles
 ```
 
+*Note: The installer manages the creation of local protocols and the staging of configuration templates.*
+
 ---
 
-## 🛠️ The Intelligence Suite
+## Automation Suite
 
-| Feature | Logic | Outcome |
+| Feature | Technical Logic | Operational Outcome |
 | :--- | :--- | :--- |
-| **Interactive Sync** | `github.sh` | Prevents pushing to production without sealed tags or pure history. |
-| **Atomic Commitment** | `COMMIT.md` | Forces a sequence of small, verifiable intentions over "everything" commits. |
-| **Socratic Release** | `RELEASE.md` | A structured dialogue to justify Major/Minor/Patch increments. |
-| **Integrity Audit** | `bin/cli.mjs` | Transparently handles the transformation of files during installation. |
+| **Integrity Sync** | `github.sh` | Prevents remote projection without validated tag alignment. |
+| **Atomic Commit** | `COMMIT.md` | Enforces a sequence of verifiable intentions over bulk commits. |
+| **Technical Release** | `RELEASE.md` | Socratic validation of version increments (SemVer). |
+| **System Installer** | `bin/cli.mjs` | Handles the secure deployment of configuration assets. |
 
 ---
 
-## 📜 Professional Standards
+## Engineering Standards
 
-The system is powered by the **Rodin Engineering Philosophy** :
+The project is governed by strict technical standards:
 
-- **[RODIN.md](./protocols/RODIN.md)** : The philosophical anchor (Anti-compliancy, Socratic auditing).
-- **[SECURITY.md](./protocols/SECURITY.md)** : Vulnerability management and secret scanning.
-- **[INDEX](./protocols/_INDEX.md)** : Navigation across all architectural protocols.
+- **[RODIN.md](./protocols/RODIN.md)**: Socratic auditing and engineering philosophy.
+- **[SECURITY.md](./protocols/SECURITY.md)**: Vulnerability management and secret scanning rules.
+- **[INDEX](./protocols/_INDEX.md)**: Global registry for all system protocols.
 
 ---
 
-## ⚖️ Licensing & Legal
+## Licensing
 
 Copyright © 2026 **Wistant**.  
-Everything in this repository is licensed under the **Apache License 2.0**.
+Licensed under the **Apache License 2.0**. See the [LICENSE](./LICENSE) file for the full text.
 
 ---
 
 <div align="center">
-  <p>Engineered for <img src="./assets/dotfiles.png" width="16" /> with <b>@wistantkode</b></p>
+  <p>Repository maintained by <b>@wistantkode</b></p>
 </div>
