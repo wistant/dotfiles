@@ -1,5 +1,5 @@
 {
-  "name": "@wistant/dotfiles",
+  "name": "@wistantkode/dotfiles",
   "version": "1.0.0",
   "description": "Elite Cyber-Premium Dotfiles & Protocols",
   "type": "module",
@@ -14,7 +14,9 @@
     "gitmessage",
     "myKDEshorcuts.kksrc",
     "protocols",
-    "bin"
+    "bin",
+    "pnpm.sh",
+    "github.sh"
   ],
   "scripts": {
     "setup": "node bin/cli.mjs",
@@ -22,11 +24,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "wistant",
+    "wistantkode",
     "dotfiles",
     "protocols",
     "cyber-premium"
   ],
-  "author": "Wistant & Elite Team",
+  "author": "Wistantkode & Elite Team",
   "license": "ISC"
 }
