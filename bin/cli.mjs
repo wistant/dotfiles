@@ -9,8 +9,6 @@ const pkgRoot = join(__dirname, '..');
 
 const FILES_TO_INSTALL = [
   'gitignore',
-  'aliases.sh',
-  'aliases.zsh',
   'gitmessage',
   'myKDEshorcuts.kksrc'
 ];
@@ -33,7 +31,7 @@ async function copyRecursive(src, dest) {
 }
 
 async function run() {
-  console.log('\x1b[36m%s\x1b[0m', '--- Wistant Dotfiles Installer ---');
+  console.log('\x1b[36m%s\x1b[0m', '--- Dotfiles Installer ---');
   
   const targetDir = process.cwd();
   console.log(`Installing dotfiles to: ${targetDir}`);
@@ -58,8 +56,8 @@ async function run() {
     }
   }
 
-  console.log('\x1b[32m%s\x1b[0m', '\nDone! Elite dotfiles and protocols added.');
-  console.log('To load aliases, source the aliases.sh/zsh file in your shell config.');
+  console.log('\x1b[32m%s\x1b[0m', '\nDone! Dotfiles and protocols added.');
+  console.log('Installation complete.');
 }
 
 run().catch(err => {
