@@ -49,7 +49,7 @@ echo ""
 if [ -n "$npm_token" ]; then
     echo -e "${GRAY}Utilisation d'un jeton de session...${RESET}"
     echo "//registry.npmjs.org/:_authToken=$npm_token" > .npmrc_tmp
-    pnpm publish --access public --no-git-checks --userconfig .npmrc_tmp || { rm .npmrc_tmp; refuse "Échec de distribution."; }
+    NPM_CONFIG_USERCONFIG=./.npmrc_tmp pnpm publish --access public --no-git-checks || { rm .npmrc_tmp; refuse "Échec de distribution."; }
     rm .npmrc_tmp
 else
     pnpm publish --access public || refuse "Authentification requise."
