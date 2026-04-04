@@ -74,7 +74,7 @@ Une fois l'alignement scellé, agis comme un script d'orchestration.
 > Ajoute uniquement les fichiers mutés par la release (manifestes et changelog).
 >
 > [!IMPORTANT]
-> Ce scellement (push --tags) déclenche automatiquement le workflow **GitHub Actions** (@wistantkode/dotfiles).
+> Ce scellement (push --tags) déclenche automatiquement le workflow **GitHub Actions** (@wistant/dotfiles).
 > Vérifie le succès du build dans l'onglet 'Actions' avant de considérer la distribution comme scellée.
 
 ```bash
