@@ -48,7 +48,9 @@ echo ""
 
 if [ -n "$npm_token" ]; then
     echo -e "${GRAY}Utilisation d'un jeton de session...${RESET}"
-    echo "//registry.npmjs.org/:_authToken=$npm_token" > .npmrc_tmp
+    # Create a temporary .npmrc for this session
+    echo "registry=https://registry.npmjs.org/" > .npmrc_tmp
+    echo "//registry.npmjs.org/:_authToken=$npm_token" >> .npmrc_tmp
     NPM_CONFIG_USERCONFIG=./.npmrc_tmp pnpm publish --access public --no-git-checks || { rm .npmrc_tmp; refuse "Échec de distribution."; }
     rm .npmrc_tmp
 else
