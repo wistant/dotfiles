@@ -49,7 +49,18 @@ fi
 
 # 4. Publication
 echo -e "\n${BOLD}Step 3: Distribution${RESET}"
-pnpm publish --access public $git_flags || fail "Publication failed"
+read -s -p "Enter NPM Token (leave empty to use current login): " npm_token
+echo ""
+
+if [ -n "$npm_token" ]; then
+    echo "Using manual token for publication..."
+    # Create a temporary .npmrc for this session
+    echo "//registry.npmjs.org/:_authToken=$npm_token" > .npmrc_tmp
+    pnpm publish --access public --no-git-checks --userconfig .npmrc_tmp || { rm .npmrc_tmp; fail "Publication failed"; }
+    rm .npmrc_tmp
+else
+    pnpm publish --access public $git_flags || fail "Publication failed"
+fi
 
 echo -e "\n${GRAY}--------------------------------------------------${RESET}"
 echo -e "${BOLD}${CYAN}  PUBLISHED SUCCESSFULLY${RESET}"
