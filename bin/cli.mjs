@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgRoot = join(__dirname, '..');
 
 const FILES_TO_INSTALL = [
-  '.gitignore',
+  'gitignore',
   'aliases.sh',
   'aliases.zsh',
   'gitmessage',
@@ -40,8 +40,9 @@ async function run() {
 
   for (const file of FILES_TO_INSTALL) {
     try {
-      await copyFile(join(pkgRoot, file), join(targetDir, file));
-      console.log(`  [OK] ${file}`);
+      const destName = file === 'gitignore' ? '.gitignore' : file;
+      await copyFile(join(pkgRoot, file), join(targetDir, destName));
+      console.log(`  [OK] ${destName}`);
     } catch (err) {
       console.error(`  [ERROR] Failed to copy ${file}: ${err.message}`);
     }

@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "files": [
-    ".gitignore",
+    "gitignore",
     "aliases.sh",
     "aliases.zsh",
     "gitmessage",
