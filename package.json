@@ -1,6 +1,6 @@
 {
   "name": "@wistantkode/dotfiles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Modular dotfiles, shell aliases, and development protocols for a streamlined Linux environment.",
   "type": "module",
   "bin": {
