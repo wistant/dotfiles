@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- RODIN INTELLIGENT SYNC (SYSTEM PROTOCOL) ---
+# --- GITHUB SYNC (SYSTEM PROTOCOL) ---
 
 # Couleurs & Style
 GRAY='\033[90m'
@@ -14,7 +14,7 @@ RESET='\033[0m'
 # Utilitaires
 print_banner() {
     echo -e "${GRAY}--------------------------------------------------${RESET}"
-    echo -e "${BOLD}  RODIN AUDIT : GITHUB SYNC${RESET}"
+    echo -e "${BOLD}  INTEGRITY AUDIT : GITHUB SYNC${RESET}"
     echo -e "${GRAY}--------------------------------------------------${RESET}"
 }
 
@@ -50,7 +50,6 @@ echo -e "${BOLD}Localisation :${RESET} Branche ${CYAN}${BOLD}${CURRENT_BRANCH}${
 
 # 3. Audit des Tags (Delta Local vs Distant)
 echo -e "${GRAY}Analyse du scellement (tags)...${RESET}"
-# Liste les tags locaux absents sur l'origin
 LOCAL_ONLY_TAGS=$(git log --tags --simplify-by-decoration --pretty="format:%D" | grep "tag: " | sed 's/.*tag: \([^,)]*\).*/\1/' | while read tag; do
     if ! git ls-remote --tags origin 2>/dev/null | grep -q "refs/tags/$tag"; then
         echo $tag
@@ -63,53 +62,44 @@ if [ -n "$LOCAL_ONLY_TAGS" ]; then
         echo -e "  - ${BOLD}$tag${RESET}"
     done
     
-    if ask_confirm "Faut-il propager et sceller ces tags avec cette projection ?"; then
+    if ask_confirm "Faut-il propager ces tags avec cette projection ?"; then
         PUSH_TAGS="--tags"
-        echo -e "${GREEN}Tags inclus dans la projection.${RESET}"
-    else
-        echo -e "${GRAY}Tags ignorés pour cette session.${RESET}"
     fi
 else
-    echo -e "${GRAY}Aucun nouveau tag local détecté (Historique déjà scellé).${RESET}"
+    echo -e "${GRAY}Aucun nouveau tag local détecté.${RESET}"
 fi
 
-# 4. Logique de Branche (Socratique)
+# 4. Logique de Branche
 case "$CURRENT_BRANCH" in
     "main" | "master")
-        echo -e "${RED}${BOLD}ATTENTION :${RESET} Tu es sur la branche de production (Oracle)."
-        if ! ask_confirm "Voulez-vous sceller ces changements sur le miroir public ?"; then
-            refuse "Projection de production annulée."
+        echo -e "${RED}${BOLD}ATTENTION :${RESET} Branche de production."
+        if ! ask_confirm "Voulez-vous sceller ces changements sur le dépôt public ?"; then
+            refuse "Projection annulée."
         fi
         ;;
     "dev" | "develop")
-        echo -e "${YELLOW}INFO :${RESET} Branche d'intégration détectée."
+        echo -e "${YELLOW}INFO :${RESET} Branche d'intégration."
         if ! ask_confirm "Pousser vers l'amont de développement ?"; then
             refuse "Projection dev annulée."
         fi
         ;;
     feat/* | fix/* | refactor/*)
-        echo -e "${GREEN}INFO :${RESET} Branche de travail ciblée détectée."
-        echo -e "${GRAY}Astuce : N'oublie pas de merger vers 'main' une fois ton intention validée.${RESET}"
-        if ! ask_confirm "Continuer la projection de la branche de travail ?"; then
+        echo -e "${GREEN}INFO :${RESET} Branche de travail."
+        if ! ask_confirm "Continuer la projection ?"; then
             refuse "Projection feature annulée."
         fi
         ;;
     *)
-        echo -e "${GRAY}Branche personnalisée ou temporaire détectée.${RESET}"
         if ! ask_confirm "Confirmer la projection vers l'amont ?"; then
             refuse "Projection annulée."
         fi
         ;;
 esac
 
-# 5. Projection (Action Finale)
-echo -e "\n${BOLD}Action :${RESET} Projection vers le miroir distant..."
+# 5. Projection
+echo -e "\n${BOLD}Action :${RESET} Synchronisation distante..."
 if git push $PUSH_TAGS; then
     echo -e "\n${GREEN}${BOLD}SUCCÈS :${RESET} L'infrastructure est synchronisée."
-    if [ -n "$PUSH_TAGS" ]; then
-        echo -e "${CYAN}Note : Les tags ont été scellés, triggering GitHub Actions...${RESET}"
-    fi
-    echo -e "${GRAY}Ton historique est désormais scellé à distance.${RESET}"
 else
     refuse "Échec de la projection. Vérifie ta clé ou ta connexion."
 fi
