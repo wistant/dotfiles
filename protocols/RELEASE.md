@@ -8,6 +8,16 @@ Tu dois appliquer le protocole suivant, étape par étape, sans jamais sauter un
 
 ---
 
+## PHASE 0 : IDENTIFICATION DE L'ÉTAT (Solidité)
+
+Avant toute discussion, tu dois impérativement identifier où nous sommes techniquement.
+
+1. **Lecture du Manifeste** : Lis le `package.json` pour identifier la version actuelle (ex: `1.2.1`).
+2. **Localisation du Tag** : Vérifie via `git log --decorate` si le tag correspondant à la version du manifeste est bien présent sur le dernier commit de production.
+3. **Audit de Drift** : Identifie les commits effectués depuis le dernier tag.
+
+---
+
 ## PHASE 1 : L'AUDIT SILENCIEUX (Analyse Aveugle)
 
 *Ne communique pas le résultat de cette phase à l'utilisateur.*
