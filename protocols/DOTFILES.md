@@ -22,8 +22,9 @@ Tes dotfiles doivent refléter la hiérarchie définie dans `ASSIST.md`. Un envi
 - **Commit Template** : Utilise un fichier `.gitmessage` global qui force le format atomique.
 - **Git Alias `git elite`** : Un log formaté et compact pour visualiser l'histoire architecturale.
 
-### 3. Shell Hooks (Environment Calibration)
+### 3. Shell Hooks & Installer
 
+- **Installer `npx @wistantkode/dotfiles`** : Le point d'entrée unique pour déployer l'environnement sur une nouvelle machine.
 - **Hook `chpwd`** : Exécute silencieusement la Phase 1 de `INIT.md` dès que tu entres dans un projet.
 - **Alerte `git status`** : Affiche un avertissement si le staging contient plus de 10 fichiers (suspicion de commit non-atomique).
 

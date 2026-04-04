@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file.
 - Moved dotfiles to root and renamed `gitignore` to `gitignore` (template).
 - Protocols moved to `protocols/` (installed as `.protocols/`).
 
-### Added
+### Initial Features
 
 - Added `bin/cli.mjs` for automated installation via `npx`.
 - Added `pnpm.sh` and `github.sh` for streamlined dev workflow.

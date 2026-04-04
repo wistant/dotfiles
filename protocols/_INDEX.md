@@ -21,6 +21,7 @@
 | **Testing, QA, Resilience** | [TEST.md](./TEST.md) | Multi-level coverage, shadow simulations, resilience rapport. |
 | **Setup, New Project** | [INIT.md](./INIT.md) | Project initialization and stack calibration. |
 | **Dotfiles, Env Maintenance** | [DOTFILES.md](./DOTFILES.md) | System OS for AI-Pairing, shell integration, git templates. |
+| **AI Interaction & Usage** | [IA_USAGE.md](./IA_USAGE.md) | Quick-start guide for AI-Pairing and command triggers. |
 
 ---
 
