@@ -1,53 +1,30 @@
-# DOTFILES & ENVIRONMENT PROTOCOL (DOTFILES.md)
+# DOTFILES ARCHITECTURE (DOTFILES.md)
 
-> [!IMPORTANT]
-> **Activation de l'Agent :**
-> Lors de la maintenance ou de l'expansion de ta configuration système, tu actives le **System Integrity Audit**. Ta mission est de garantir que tes outils ne sont pas seulement des gadgets, mais des extensions directes de tes protocoles d'ingénierie.
+This repository contains a modular environment setup designed for high-end engineering.
 
----
+## COMMANDS & ALIASES
 
-## SYNC : LE SYSTÈME D'EXPLOITATION SOCRATIQUE
+- **`ia`** (Integrity Assist) : `cat protocols/ASSIST.md`
+- **`is`** (Integrity Status) : `cat protocols/_INDEX.md`
 
-Tes dotfiles doivent refléter la hiérarchie définie dans `ASSIST.md`. Un environnement "parfait" est un environnement qui **force** la réflexion avant l'action.
+### 2. Git Automation
 
-### 1. Aliases de Navigation & Audit (Zsh/Bash)
-
-- **`ra`** (Rodin Assist) : `cat protocols/ASSIST.md`
-- **`ri`** (Rodin Index) : `cat protocols/_INDEX.md`
-- **`rc`** (Rodin Commit) : Avant tout commit, affiche `COMMIT.md`.
-- **`rs`** (Rodin Security) : Script automatique `pnpm audit` + scan de secrets.
-
-### 2. Git Automation (Elite Config)
-
-- **Commit Template** : Utilise un fichier `.gitmessage` global qui force le format atomique.
-- **Git Alias `git elite`** : Un log formaté et compact pour visualiser l'histoire architecturale.
-
-### 3. Shell Hooks & Installer
-
-- **Installer `npx @wistantkode/dotfiles`** : Le point d'entrée unique pour déployer l'environnement sur une nouvelle machine.
-- **Hook `chpwd`** : Exécute silencieusement la Phase 1 de `INIT.md` dès que tu entres dans un projet.
-- **Alerte `git status`** : Affiche un avertissement si le staging contient plus de 10 fichiers (suspicion de commit non-atomique).
+- **Commit Template** : Uses a global `.gitmessage` file to enforce atomic formatting.
+- **Smart Sync** : Interactive script (`github.sh`) to manage branches and tags.
 
 ---
 
-## ESTHÉTIQUE "CYBER-PREMIUM"
+## DESIGN PRINCIPLES
 
-L'interface doit être une source d'inspiration, pas une distraction.
+The interface is designed for focus and structural clarity.
 
-- **Prompt** : Starship. Intègre un symbole minimaliste pour l'état du "Rodin Audit".
-- **Multiplexeur** : Zellij. Utilise des layouts qui ouvrent toujours `ASSIST.md` dans un panneau latéral.
-- **Typographie** : JetBrains Mono ou Victor Mono (avec ligatures pour la lisibilité du code).
-
----
-
-## CHECKLIST DE PERFECTION
-
-- [ ] Mes protocoles sont accessibles en une touche.
-- [ ] Mon prompt me prévient si je dévie de l'atomicité.
-- [ ] Mon setup est reproductible (`install.sh` ou `stow`).
-- [ ] Ma configuration Git m'interdit les messages de commit médiocres.
+- **Prompt** : Starship. Minimalist indicator for the repository state.
+- **Multiplexeur** : Zellij. Layouts that prioritize documentation alongside code.
+- **Typography** : JetBrains Mono (optimized for code readability).
 
 ---
 
-> [!CAUTION]
-> Un outil que tu ne comprends pas est une faille. La "perfection" n'est pas d'ajouter des fonctions, mais de retirer ce qui est inutile.
+## SHELL HOOKS
+
+Every directory change triggers a check for local protocols.
+See `aliases.zsh` for the `chpwd` function logic.

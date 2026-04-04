@@ -1,46 +1,32 @@
-# AI PROTOCOL INDEX (THE BRAIN)
+# AI PROTOCOL INDEX
 
-> [!IMPORTANT]
-> **SYSTEM INSTRUCTION** :
->
-> 1. **Lecture Imperative** : Toujours lire `ASSIST.md` a l'initialisation.
-> 2. **Navigation Contextuelle** : Identifie l'intention du USER et charge uniquement le protocole correspondant ci-dessous.
-> 3. **Rodin Sync** : Chaque protocole est pilote par la personnalite de `RODIN.md`.
+1. **Integrity First** : Every change is documented and audited.
+2. **Atomic History** : Single purpose commits.
+3. **Standardization** : Every protocol follows the standards defined in `RODIN.md`.
 
----
+## PROTOCOL MAP
 
-## CONTEXT MAP (SELECT BY INTENT)
-
-| User Intent / Activity | Protocol to Load | Why? |
+| Topic | File | Purpose |
 | :--- | :--- | :--- |
-| **Commit, Versioning, Git** | [COMMIT.md](./COMMIT.md) | Atomic commits, Zero `git add .`, elite logic grouping. |
-| **Pull Request, Merging** | [PR.md](./PR.md) | Sync audit, technical English reporting in `zothers/`. |
-| **Restructuring, Cleanup** | [REFACTOR.md](./REFACTOR.md) | Architectural mirror, dependency mapping, impact analysis. |
-| **Releasing, Tagging** | [RELEASE.md](./RELEASE.md) | Pre-flight checks, Socratic validation, SemVer sealing. |
-| **Security, Secrets, Deps** | [SECURITY.md](./SECURITY.md) | Zero-Token integrity, dependency audit, isolation check. |
-| **Testing, QA, Resilience** | [TEST.md](./TEST.md) | Multi-level coverage, shadow simulations, resilience rapport. |
-| **Setup, New Project** | [INIT.md](./INIT.md) | Project initialization and stack calibration. |
-| **Dotfiles, Env Maintenance** | [DOTFILES.md](./DOTFILES.md) | System OS for AI-Pairing, shell integration, git templates. |
+| **Identity & Philosophy** | [RODIN.md](./RODIN.md) | Socratic auditing and engineering philosophy. |
+| **Operational Workflow** | [ASSIST.md](./ASSIST.md) | Master operating protocol, roles, and modes. |
+| **Commits** | [COMMIT.md](./COMMIT.md) | Atomic commit rules and formatting. |
+| **Releasing** | [RELEASE.md](./RELEASE.md) | Versioning logic and release steps. |
+| **Security** | [SECURITY.md](./SECURITY.md) | Vulnerability audits and secret scanning. |
+
+## INTERACTION FLOW
+
+1. **Bootstrap** : Load `ASSIST.md` + `RODIN.md`.
+2. **The Socratic Test** : Perform the integrity check.
+3. **Execute** : Precise mutations.
+4. **Seal** : Atomic commit.
 
 ---
 
-## HOW TO USE THIS BRAIN
+## COMMAND TRIGGERS
 
-1. **Bootstrap** : Charge `ASSIST.md` + `RODIN.md`.
-2. **Scan** : Analyse la demande actuelle.
-3. **Trigger** : Invoque la **Phase 1** du protocole cible (Audit Silencieux).
-4. **Debate** : Engage le test socratique avant toute mutation.
-
----
-
-## COMMAND TRIGGERS (IA CONTROL)
-
-| Action Souhaitée | Commande à donner à l'IA | Protocole Activé |
+| Action | Command | Protocol |
 | :--- | :--- | :--- |
-| **Faire un commit** | "Fais le commit" | [COMMIT.md](./COMMIT.md) |
-| **Lancer une release** | "Prépare la vX.Y.Z" | [RELEASE.md](./RELEASE.md) |
-| **Vérifier la sécurité** | "Audit de sécurité" | [SECURITY.md](./SECURITY.md) |
-| **Installer ailleurs** | "Comment installer ?" | [DOTFILES.md](./DOTFILES.md) |
-
-> [!TIP]
-> **CONCORDANCE** : Tous les protocoles partagent la meme structure "Activation ➡️ Audit ➡️ Socratique ➡️ Execution". Ne devie jamais de ce cycle.
+| **Commit** | "Fais le commit" | [COMMIT.md](./COMMIT.md) |
+| **Release** | "Prépare la release" | [RELEASE.md](./RELEASE.md) |
+| **Security** | "Audit sécurité" | [SECURITY.md](./SECURITY.md) |
