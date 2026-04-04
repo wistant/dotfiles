@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1] - 2026-04-04 - [Documentation & Branding]
+
+### Added
+
+- **AI-Driven Infrastructure**: Re-engineered the repository documentation to focus on AI-pairing orchestration and guardrails.
+- **Branding Assets**: Included professional logos and technical icons for the ecosystem.
+- **Legal Compliance**: Integrated **Apache License 2.0** as the project's legal baseline.
+
+### Changed
+
+- **Premium Documentation**: Completely redesigned `README.md` with architectural diagrams and deep technical storytelling.
+
+### Removed
+
+- **Legacy Artifacts**: Purged the obsolete KDE shortcuts file and remaining legacy scripts.
+
 ## [1.2.0] - 2026-04-04 - [Streamlining & Smart Sync]
 
 ### Changed
