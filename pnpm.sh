@@ -47,12 +47,10 @@ read -s -p "Clé d'accès NPM (Token) : " npm_token
 echo ""
 
 if [ -n "$npm_token" ]; then
-    echo -e "${GRAY}Utilisation d'un jeton de session...${RESET}"
-    # Create a temporary .npmrc for this session
-    echo "registry=https://registry.npmjs.org/" > .npmrc_tmp
-    echo "//registry.npmjs.org/:_authToken=$npm_token" >> .npmrc_tmp
-    NPM_CONFIG_USERCONFIG=./.npmrc_tmp pnpm publish --access public --no-git-checks || { rm .npmrc_tmp; refuse "Échec de distribution."; }
-    rm .npmrc_tmp
+    echo -e "${GRAY}Scellement par jeton éphémère...${RESET}"
+    # Environment injection (Self-destructing: no disk trace)
+    npm_config_//registry.npmjs.org/:_authToken="$npm_token" pnpm publish --access public --no-git-checks || { unset npm_token; refuse "Échec de distribution."; }
+    unset npm_token
 else
     pnpm publish --access public || refuse "Authentification requise."
 fi
