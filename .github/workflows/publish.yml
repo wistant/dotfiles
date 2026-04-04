@@ -1,0 +1,35 @@
+name: Release Activation
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  distribution:
+    name: NPM Distribution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetching Code
+        uses: actions/checkout@v4
+
+      - name: Installing pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Initializing Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Security Audit (Zero-Trust)
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm audit
+
+      - name: Distribution Scellement
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
