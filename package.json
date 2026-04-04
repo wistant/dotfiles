@@ -1,35 +1,44 @@
 {
   "name": "@wistantkode/dotfiles",
-  "version": "1.2.0",
-  "description": "Modular dotfiles, shell aliases, and development protocols for a streamlined Linux environment.",
+  "version": "1.2.1",
+  "description": "High-End Linux Infrastructure & AI-Driven Orchestration Protocols",
+  "main": "index.js",
   "type": "module",
   "bin": {
-    "wistant-dotfiles": "bin/cli.mjs"
+    "dotfiles": "bin/cli.mjs"
   },
-  "main": "index.js",
-  "files": [
-    "gitignore",
-    "aliases.sh",
-    "aliases.zsh",
-    "gitmessage",
-    "myKDEshorcuts.kksrc",
-    "protocols",
-    "bin",
-    "pnpm.sh",
-    "github.sh"
-  ],
   "scripts": {
-    "setup": "node bin/cli.mjs",
-    "audit": "sh ./protocols/SECURITY.md",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "audit": "pnpm audit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wistant/dotfiles.git"
   },
   "keywords": [
-    "wistantkode",
     "dotfiles",
-    "protocols",
-    "configuration",
-    "shell"
+    "infrastructure-as-code",
+    "ai-pairing",
+    "orchestration",
+    "socratic-protocols",
+    "linux-setup",
+    "automation",
+    "cli",
+    "professional-environment",
+    "pnpm",
+    "engineering-standards"
   ],
-  "author": "Wistantkode",
-  "license": "ISC"
+  "author": "Wistant",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/wistantkode/dotfiles/issues"
+  },
+  "homepage": "https://github.com/wistantkode/dotfiles#readme"
 }
