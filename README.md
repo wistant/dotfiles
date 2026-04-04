@@ -1,69 +1,78 @@
-# [@wistantkode/dotfiles](https://www.npmjs.com/package/@wistantkode/dotfiles)
-
 <div align="center">
-  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="120" />
-  <h3>Modular Dotfiles & Architectural Protocols</h3>
-  <p align="center">
-    <img src="./assets/pnpm.svg" alt="pnpm" width="24" /> <b>pnpm</b> &nbsp; | &nbsp; 
-    <img src="./assets/npm.svg" alt="npm" width="24" /> <b>npm</b> &nbsp; | &nbsp; 
-    <img src="./assets/dotfiles.png" alt="dotfiles" width="24" /> <b>Linux</b> 
+  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="160" />
+  <h1>@wistantkode/dotfiles</h1>
+  <p><b>Architecture Above Configuration — Professional Engineering Environment</b></p>
+  
+  <p>
+    <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=flat-square&color=CB0000" alt="npm version" />
+    <img src="https://img.shields.io/badge/pnpm-6AD7E5?style=flat-square&logo=pnpm&logoColor=white" alt="pnpm" />
+    <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="License" />
+    <img src="https://img.shields.io/badge/OS-Linux-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Linux" />
   </p>
 </div>
 
 ---
 
-## Overview
+## 🏛️ The Engineering Philosophy
 
-This repository provides a streamlined Linux environment setup based on high-end engineering standards. It focuses on **architectural integrity**, **atomic history**, and **automated distribution**.
+This is not a traditional "dotfiles" repository. It is a **Self-Documenting Infrastructure** designed for high-end software development. It enforces **Architectural Integrity** through local protocols and automated guardrails.
 
-### Key Features
-
-- **Smart Installer**: Deploy the entire ecosystem via `npx @wistantkode/dotfiles`.
-- **System Protocols**: Comprehensive guides for commits, releases, and security audits (`.protocols/`).
-- **Interactive Sync**: A specialized `github.sh` script with Tag Delta detection and branch awareness.
-- **CI/CD Driven**: Automated NPM publication via GitHub Actions on every official release.
+### Why this is different:
+- **Protocol-Driven**: Every action (Commit, Release, Refactor) is guided by a local `.protocols/` library.
+- **Atomic History**: Zero-entropy git history enforced by the **Integrity Audit** (`github.sh`).
+- **NPM Integration**: Distribute your entire environment globally via `pnpm` or `npm`.
+- **Smart Synchronization**: Branch-aware and Tag-aware sync scripts that prevent data loss and versioning errors.
 
 ---
 
-## Quick Start
+## 🚀 Quick Deployment
 
-Deploy the environment on any machine:
+Instantiate your professional environment in seconds on any Linux machine:
 
 ```bash
 pnpm dlx @wistantkode/dotfiles
 ```
 
-*Note: The installer automatically creates hidden `.protocols/` and configuration files in your root.*
+> [!TIP]
+> This command will safely inject the `.protocols/` directory and necessary configuration templates into your current working directory without overwriting existing critical files.
 
 ---
 
-## Engineering Standards
+## 🛠️ The Tooling Suite
 
-Every interaction with this repository follows a strict socratic and architectural protocol:
+### 1. Smart Oracle Sync (`./github.sh`)
+An interactive Git wrapper that acts as a technical advisor.
+- **Branch Detection**: Contextual warnings for `main`, `dev`, and `feat/` branches.
+- **Tag Delta Detection**: Compares local and remote tags to ensure release alignment.
+- **Atomic Guardrail**: Blocks pushes if the history is not "pure" (uncommitted changes).
 
-- **[RODIN.md](./protocols/RODIN.md)**: Engineering philosophy and socratic auditing.
-- **[COMMIT.md](./protocols/COMMIT.md)**: Strict atomic commit rules (Zero `git add .`).
-- **[RELEASE.md](./protocols/RELEASE.md)**: Systematic versioning and distribution steps.
-
----
-
-## Automation
-
-### Local Synchronization
-Use the smart sync script to audit your state before pushing:
-```bash
-./github.sh
-```
-
-### GitHub Actions
-The distribution is handled by **GitHub Actions** (`.github/workflows/publish.yml`). It performs:
-1. Integrity audits (`pnpm audit`).
-2. Secret scanning.
-3. Automated NPM publication upon GitHub Release tagging.
+### 2. GitHub Actions CI/CD
+The distribution is handled by **GitHub Actions** (`.github/workflows/publish.yml`).
+- **Automated Releasing**: Every GitHub Release triggers an npm publication.
+- **Security Audits**: Mandatory `pnpm audit` and secret scanning are performed on every build.
 
 ---
 
-## License
+## 📜 Standards & Protocols
 
-Copyright 2026 Wistant.
-Licensed under the **Apache License, Version 2.0**. See the [LICENSE](./LICENSE) file for details.
+Documentation is code. The system is governed by:
+
+| Protocol | Purpose |
+| :--- | :--- |
+| **[RODIN.md](./protocols/RODIN.md)** | Socratic auditing and engineering philosophy. |
+| **[COMMIT.md](./protocols/COMMIT.md)** | Rules for atomic, intention-based committing. |
+| **[RELEASE.md](./protocols/RELEASE.md)** | Systematic versioning logic (Phase 1-4). |
+| **[SECURITY.md](./protocols/SECURITY.md)** | Security audits and vulnerability management. |
+
+---
+
+## ⚖️ License
+
+Copyright © 2026 **Wistant**.  
+Distributed under the **Apache License 2.0**. See the [LICENSE](./LICENSE) file for the full legal text.
+
+---
+
+<div align="center">
+  <p>Built with <img src="./assets/pnpm.svg" alt="pnpm" width="16" /> and <img src="./assets/npm.svg" alt="npm" width="16" /> for <b>@wistantkode</b></p>
+</div>
