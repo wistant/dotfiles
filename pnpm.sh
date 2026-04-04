@@ -33,13 +33,27 @@ else
     echo -e "${GRAY}Avertissement : Es-tu certain que la sémantique n'a pas évolué ?${RESET}"
 fi
 
-# 3. Validation Technique (Audit)
-if [ -f "pnpm-lock.yaml" ]; then
-    echo -e "\n${BOLD}Audit technique :${RESET}"
-    pnpm audit || refuse "Vulnérabilités détectées. Base de code non sécurisée."
-else
-    echo -e "\n${GRAY}Note : Aucun lockfile trouvé. Audit partiel.${RESET}"
+# 3. Audit de Sécurité (Zero-Trust)
+echo -e "\n${BOLD}Audit de Sécurité :${RESET}"
+if [ ! -f "pnpm-lock.yaml" ]; then
+    refuse "Absence de pnpm-lock.yaml. L'intégrité des dépendances ne peut être garantie. Génère un lockfile avant toute distribution."
 fi
+
+echo -e "${GRAY}Analyse des vulnérabilités...${RESET}"
+pnpm audit || refuse "Failles détectées dans l'arbre des dépendances."
+
+# 4. Scan d'Intégrité (Secrets)
+echo -e "\n${BOLD}Scan d'Intégrité (Secrets) :${RESET}"
+# Recherche de motifs sensibles (excluant les fichiers de config et le script lui-même)
+forbidden_patterns="npm_|key_|secret_|password|token"
+secrets=$(grep -rEi "$forbidden_patterns" . --exclude-dir=.git --exclude="pnpm.sh" --exclude="CHANGELOG.md" --exclude="package.json" --exclude="*.md" 2>/dev/null)
+
+if [ -n "$secrets" ]; then
+    echo -e "${RED}ALERTE : Secrets ou clés potentiels détectés :${RESET}"
+    echo "$secrets" | sed 's/^/  /'
+    refuse "La Phase 1 du protocole SECURITY.md (Secret Scanning) a échoué. Purge tes fichiers avant de continuer."
+fi
+echo -e "${GRAY}Aucun secret détecté dans l'espace de travail.${RESET}"
 
 # 4. Scellement (Distribution)
 echo -e "\n${BOLD}Scellement final :${RESET}"
