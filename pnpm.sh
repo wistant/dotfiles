@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- RODIN AUDIT : NPM DISTRIBUTION ---
+# --- SYSTEM PROTOCOL : NPM RELEASE ---
 
 GRAY='\033[90m'
 BOLD='\033[1m'
@@ -15,7 +15,7 @@ refuse() {
 }
 
 echo -e "${GRAY}--------------------------------------------------${RESET}"
-echo -e "${BOLD}  RODIN AUDIT : NPM DISTRIBUTION${RESET}"
+echo -e "${BOLD}  SYSTEM PROTOCOL : NPM RELEASE${RESET}"
 echo -e "${GRAY}--------------------------------------------------${RESET}"
 
 # 1. Intégrité Git (COMMIT.md Guard)
@@ -24,7 +24,7 @@ if ! git diff-index --quiet HEAD --; then
 fi
 
 # 2. Sémantique (Versioning)
-echo -e "${BOLD}Analyse sémantique :${RESET}"
+echo -e "${BOLD}Phase 1 : Audit Sémantique${RESET}"
 read -p "Type d'incrément requis (patch/minor/major/none) ? " vtype
 if [[ "$vtype" =~ ^(patch|minor|major)$ ]]; then
     echo -e "${GRAY}Mutation de la version ($vtype)...${RESET}"
@@ -34,7 +34,7 @@ else
 fi
 
 # 3. Audit de Sécurité (Zero-Trust)
-echo -e "\n${BOLD}Audit de Sécurité :${RESET}"
+echo -e "\n${BOLD}Phase 2 : Audit de Sécurité${RESET}"
 if [ ! -f "pnpm-lock.yaml" ]; then
     refuse "Absence de pnpm-lock.yaml. L'intégrité des dépendances ne peut être garantie. Génère un lockfile avant toute distribution."
 fi
@@ -43,8 +43,7 @@ echo -e "${GRAY}Analyse des vulnérabilités...${RESET}"
 pnpm audit || refuse "Failles détectées dans l'arbre des dépendances."
 
 # 4. Scan d'Intégrité (Secrets)
-echo -e "\n${BOLD}Scan d'Intégrité (Secrets) :${RESET}"
-# Recherche de motifs sensibles (excluant les fichiers de config et le script lui-même)
+echo -e "\n${BOLD}Phase 3 : Scan d'Intégrité (Secrets)${RESET}"
 forbidden_patterns="npm_|key_|secret_|password|token"
 secrets=$(grep -rEi "$forbidden_patterns" . --exclude-dir=.git --exclude="pnpm.sh" --exclude="CHANGELOG.md" --exclude="package.json" --exclude="*.md" 2>/dev/null)
 
@@ -53,16 +52,16 @@ if [ -n "$secrets" ]; then
     echo "$secrets" | sed 's/^/  /'
     refuse "La Phase 1 du protocole SECURITY.md (Secret Scanning) a échoué. Purge tes fichiers avant de continuer."
 fi
-echo -e "${GRAY}Aucun secret détecté dans l'espace de travail.${RESET}"
+echo -e "${GRAY}Aucun secret détecté. Intégrité validée.${RESET}"
 
-# 4. Scellement (Distribution)
-echo -e "\n${BOLD}Scellement final :${RESET}"
+# 5. Scellement (Distribution)
+echo -e "\n${BOLD}Phase 4 : Scellement Final${RESET}"
 read -s -p "Clé d'accès NPM (Token) : " npm_token
 echo ""
 
 if [ -n "$npm_token" ]; then
-    echo -e "${GRAY}Scellement par jeton éphémère...${RESET}"
-    # Environment injection (Self-destructing: no disk trace)
+    echo -e "${GRAY}Lancement de la procédure de scellement NPM...${RESET}"
+    # Utilisation de la variable d'environnement pour une injection éphémère (Zero-Trace)
     npm_config_//registry.npmjs.org/:_authToken="$npm_token" pnpm publish --access public --no-git-checks || { unset npm_token; refuse "Échec de distribution."; }
     unset npm_token
 else
@@ -70,6 +69,6 @@ else
 fi
 
 echo -e "\n${GRAY}--------------------------------------------------${RESET}"
-echo -e "${BOLD}  DISTRIBUTION COMPLÈTE${RESET}"
-echo -e "${GRAY}  L'infrastructure est désormais synchronisée.${RESET}"
+echo -e "${BOLD}  DISTRIBUTION TERMINÉE${RESET}"
+echo -e "${GRAY}  L'infrastructure est synchronisée.${RESET}"
 echo -e "${GRAY}--------------------------------------------------${RESET}"
