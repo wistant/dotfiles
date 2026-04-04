@@ -45,7 +45,7 @@ Chaque commit doit suivre strictement ce format :
 ```text
 <type>(scope): <sujet>
 
-[Corps bien explicite mais pas trop longs juste long pour pour les moyens et gros changements]
+[Corps explicite mais concis — réservé aux changements d'ampleur moyenne ou majeure]
 
 [Footer]
 ```

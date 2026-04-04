@@ -23,7 +23,7 @@ Avant toute discussion, tu dois impérativement identifier où nous sommes techn
 *Ne communique pas le résultat de cette phase à l'utilisateur.*
 
 1. **Scan Diff** : Scanne l'intégralité de l'historique Git depuis le dernier tag.
-2. **Impact Multi-Module** : Analyse les fichiers modifiés (`apps/`, `packages/`, `libs/`).
+2. **Impact Mapping** : Analyse les fichiers modifiés. Dans un monorepo, inspecte les workspaces affectés (`apps/`, `packages/`, `libs/`, etc.). Dans un package unique, identifie les modules internes impactés.
 3. **Incrémentation Sémantique Objectif** :
    - **MAJOR** : Breaking changes, schémas DB modifiés, altération de contrats API.
    - **MINOR** : Nouvelles features rétro-compatibles.

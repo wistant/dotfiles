@@ -9,8 +9,7 @@ This repository contains a modular environment setup designed for high-end engin
 
 ### 2. Git Automation
 
-- **Commit Template** : Uses a global `.gitmessage` file to enforce atomic formatting.
-- **Smart Sync** : Interactive script (`github.sh`) to manage branches and tags.
+- **Smart Sync** : Interactive gatekeeper script (`github.sh`) to manage branches, tags, and remote projection.
 
 ---
 

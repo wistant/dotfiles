@@ -19,16 +19,18 @@
 ## PHASE 2 : DEPENDENCY INTEGRITY (PNPM CIBLE)
 
 Lorsque tu manipules des bibliotheques :
+
 - **Audit de vulnerabilite** : Utilise `pnpm audit` (ou Bun/Npm correspondant).
 - **CVE Monitoring** : Alerte sur les CVE critiques (ex: Prisma, Next.js, etc.).
 - **Dette de Version** : Identifie les packages obsolètes susceptibles de créer des failles.
 
 ---
 
-## PHASE 3 : VALIDATION DE L'ISOLATION (DB/API)
+## PHASE 3 : DATA ISOLATION & AUTH VALIDATION
 
-- **HMAC / Auth** : Vérifie la validite des signatures et headers d'authentification.
-- **Multi-Tenant Audit** : Dans Prisma, vérifie que les requêtes `$where` isolent bien les donnees de l'utilisateur actuel.
+- **Auth & Signatures** : Verify validity of authentication mechanisms (JWT, HMAC, API keys, OAuth flows).
+- **Data Isolation** : Validate that query logic enforces proper tenant/user scoping and cannot leak cross-boundary data.
+- **Input Sanitization** : Check API endpoints, form handlers, and CLI inputs for missing or incomplete validation.
 
 ---
 

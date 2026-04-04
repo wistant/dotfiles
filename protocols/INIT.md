@@ -1,8 +1,8 @@
 # PROTOCOLE D'INITIALISATION (CLEAN START)
 
 > [!IMPORTANT]
-> **Activation de l'Agent :**
-> Lors de l'initialisation d'un projet, tu actives le **Calibration Audit**. Ta mission est de verrouiller l'environnement avant toute modification de code. L'échec d'une étape suspend immédiatement les opérations.
+> **Agent Activation:**
+> Whenever a new project is initialized or cloned, activate the **Calibration Audit**. Your mission is to lock down the environment before any code mutation. A failed step must immediately suspend all operations.
 
 ---
 
@@ -19,6 +19,7 @@
 ## PHASE 2 : SETUP DE L'ENVIRONNEMENT (ECO-SYSTEM)
 
 Audit des fondations :
+
 - **Variables** : Presence de `.env.example` et validation du `.env` local.
 - **Runtimes** : Validation des versions (Node.js, Bun) via `.nvmrc` ou `package.json`.
 - **Managers** : Détection du gestionnaire privilégié (`pnpm` prio ou `bun`).
@@ -27,11 +28,10 @@ Audit des fondations :
 
 ## PHASE 3 : CALIBRAGE DES OUTILS (TOOLSET)
 
-1. **Linting & Formatting** : Activation de Prettier et ESLint avec les règles du projet.
-2. **IDE Sync** : Vérification des extensions VS Code recommandées (`.vscode/extensions.json`).
-3. **Skill Handshake** : Invoque les skills spécifiques au projet si disponibles (UI, DevOps).
+1. **Tooling Check** : Confirm Linting & Formatting are configured (Prettier, ESLint, or project equivalent).
+2. **IDE Sync** : Verify recommended IDE configuration is present (e.g., `.vscode/extensions.json`).
 
 ---
 
 > [!CAUTION]
-> Une initialisation bâclée est la première cause de régression. Agis de manière chirurgicale.
+> A poorly initialized environment is the primary cause of regression. Operate surgically.
