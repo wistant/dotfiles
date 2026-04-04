@@ -21,7 +21,6 @@
 | **Testing, QA, Resilience** | [TEST.md](./TEST.md) | Multi-level coverage, shadow simulations, resilience rapport. |
 | **Setup, New Project** | [INIT.md](./INIT.md) | Project initialization and stack calibration. |
 | **Dotfiles, Env Maintenance** | [DOTFILES.md](./DOTFILES.md) | System OS for AI-Pairing, shell integration, git templates. |
-| **AI Interaction & Usage** | [IA_USAGE.md](./IA_USAGE.md) | Quick-start guide for AI-Pairing and command triggers. |
 
 ---
 
@@ -33,6 +32,15 @@
 4. **Debate** : Engage le test socratique avant toute mutation.
 
 ---
+
+## COMMAND TRIGGERS (IA CONTROL)
+
+| Action Souhaitée | Commande à donner à l'IA | Protocole Activé |
+| :--- | :--- | :--- |
+| **Faire un commit** | "Fais le commit" | [COMMIT.md](./COMMIT.md) |
+| **Lancer une release** | "Prépare la vX.Y.Z" | [RELEASE.md](./RELEASE.md) |
+| **Vérifier la sécurité** | "Audit de sécurité" | [SECURITY.md](./SECURITY.md) |
+| **Installer ailleurs** | "Comment installer ?" | [DOTFILES.md](./DOTFILES.md) |
 
 > [!TIP]
 > **CONCORDANCE** : Tous les protocoles partagent la meme structure "Activation ➡️ Audit ➡️ Socratique ➡️ Execution". Ne devie jamais de ce cycle.

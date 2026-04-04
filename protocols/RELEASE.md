@@ -77,14 +77,15 @@ Une fois l'alignement scellé, agis comme un script d'orchestration.
 > Ce scellement (push --tags) déclenche automatiquement le workflow **GitHub Actions** (@wistantkode/dotfiles).
 > Vérifie le succès du build dans l'onglet 'Actions' avant de considérer la distribution comme scellée.
 
-Fournis le bloc de commandes strict :
-
 ```bash
 # Ajouter uniquement les fichiers impactés par le bump
 git add package.json CHANGELOG.md **/package.json
 git commit -m "chore(release): vX.Y.Z - [MOTTO]"
 git tag -a vX.Y.Z -m "release: [MOTTO]"
-# NOTE : L'IA ne doit jamais pousser automatiquement (voir IA_USAGE.md)
+
+# --- ARRÊT IMPÉRATIF ---
+# L'IA ne doit JAMAIS pousser (push).
+# Le USER valide et exécute : git push origin main --tags
 ```
 
 ---

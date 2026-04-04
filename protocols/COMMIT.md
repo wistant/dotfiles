@@ -11,6 +11,10 @@
 Il est **STRICTEMENT INTERDIT** d'utiliser `git add .` ou `git commit -a`.
 Chaque modification doit etre atomique. On ne melange pas la logique métier (`core/`) et le style (`ui/`).
 
+> [!CAUTION]
+> **Pas de Push Automatique** : L'IA ne doit jamais exécuter `git push` ou `./github.sh`.
+> Après le commit, l'IA s'arrête. Le USER valide et pousse manuellement.
+
 ---
 
 ## METHODOLOGIE : LE CYCLE ATOMIQUE
