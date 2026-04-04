@@ -1,78 +1,83 @@
 <div align="center">
-  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="160" />
+  <br />
+  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="180" />
   <h1>@wistantkode/dotfiles</h1>
-  <p><b>Architecture Above Configuration — Professional Engineering Environment</b></p>
+  <p><b>High-End Engineering Infrastructure & Socratic Protocols</b></p>
   
   <p>
-    <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=flat-square&color=CB0000" alt="npm version" />
-    <img src="https://img.shields.io/badge/pnpm-6AD7E5?style=flat-square&logo=pnpm&logoColor=white" alt="pnpm" />
-    <img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="License" />
-    <img src="https://img.shields.io/badge/OS-Linux-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Linux" />
+    <a href="https://www.npmjs.com/package/@wistantkode/dotfiles">
+      <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=for-the-badge&color=D12121&logo=npm" alt="npm version" />
+    </a>
+    <a href="https://pnpm.io">
+      <img src="https://img.shields.io/badge/pnpm-4AB6FA?style=for-the-badge&logo=pnpm&logoColor=white" alt="pnpm" />
+    </a>
+    <a href="./LICENSE">
+      <img src="https://img.shields.io/badge/License-Apache_2.0-F47023?style=for-the-badge" alt="License" />
+    </a>
   </p>
 </div>
 
 ---
 
-## 🏛️ The Engineering Philosophy
+## 🏛️ The Infrastructure Architecture
 
-This is not a traditional "dotfiles" repository. It is a **Self-Documenting Infrastructure** designed for high-end software development. It enforces **Architectural Integrity** through local protocols and automated guardrails.
+Contrary to standard dotfiles, this repository functions as an **Automated Distribution System**. It treats your configuration as **Infrastructure-as-Code**, governed by strict engineering standards.
 
-### Why this is different:
-- **Protocol-Driven**: Every action (Commit, Release, Refactor) is guided by a local `.protocols/` library.
-- **Atomic History**: Zero-entropy git history enforced by the **Integrity Audit** (`github.sh`).
-- **NPM Integration**: Distribute your entire environment globally via `pnpm` or `npm`.
-- **Smart Synchronization**: Branch-aware and Tag-aware sync scripts that prevent data loss and versioning errors.
+```mermaid
+graph TD
+    A[Local Machine] -- Atomic Commit --> B[GitHub Mirror]
+    B -- Release Tag --> C[GitHub Actions]
+    C -- Security Audit & Publish --> D[NPM Registry]
+    E[Target Environment] -- npx installer --> D
+    E -- Initialization --> F[Local .protocols/]
+```
+
+### Core Components
+
+- **Smart Oracle (`github.sh`)**: An interactive synchronizer that performs a "Tag Delta" audit before any projection to GitHub.
+- **Integrity Protocols**: A set of hidden guides (`.protocols/`) that force the AI and the user to maintain a pure, atomic history.
+- **CI/CD Pipeline**: fully automated distribution workflow ensuring every public version is audited and secure.
 
 ---
 
-## 🚀 Quick Deployment
+## 🚀 Instant Deployment
 
-Instantiate your professional environment in seconds on any Linux machine:
+Deploy your professional baseline on any Linux environment without cloning:
 
 ```bash
 pnpm dlx @wistantkode/dotfiles
 ```
 
-> [!TIP]
-> This command will safely inject the `.protocols/` directory and necessary configuration templates into your current working directory without overwriting existing critical files.
+---
+
+## 🛠️ The Intelligence Suite
+
+| Feature | Logic | Outcome |
+| :--- | :--- | :--- |
+| **Interactive Sync** | `github.sh` | Prevents pushing to production without sealed tags or pure history. |
+| **Atomic Commitment** | `COMMIT.md` | Forces a sequence of small, verifiable intentions over "everything" commits. |
+| **Socratic Release** | `RELEASE.md` | A structured dialogue to justify Major/Minor/Patch increments. |
+| **Integrity Audit** | `bin/cli.mjs` | Transparently handles the transformation of files during installation. |
 
 ---
 
-## 🛠️ The Tooling Suite
+## 📜 Professional Standards
 
-### 1. Smart Oracle Sync (`./github.sh`)
-An interactive Git wrapper that acts as a technical advisor.
-- **Branch Detection**: Contextual warnings for `main`, `dev`, and `feat/` branches.
-- **Tag Delta Detection**: Compares local and remote tags to ensure release alignment.
-- **Atomic Guardrail**: Blocks pushes if the history is not "pure" (uncommitted changes).
+The system is powered by the **Rodin Engineering Philosophy** :
 
-### 2. GitHub Actions CI/CD
-The distribution is handled by **GitHub Actions** (`.github/workflows/publish.yml`).
-- **Automated Releasing**: Every GitHub Release triggers an npm publication.
-- **Security Audits**: Mandatory `pnpm audit` and secret scanning are performed on every build.
+- **[RODIN.md](./protocols/RODIN.md)** : The philosophical anchor (Anti-compliancy, Socratic auditing).
+- **[SECURITY.md](./protocols/SECURITY.md)** : Vulnerability management and secret scanning.
+- **[INDEX](./protocols/_INDEX.md)** : Navigation across all architectural protocols.
 
 ---
 
-## 📜 Standards & Protocols
-
-Documentation is code. The system is governed by:
-
-| Protocol | Purpose |
-| :--- | :--- |
-| **[RODIN.md](./protocols/RODIN.md)** | Socratic auditing and engineering philosophy. |
-| **[COMMIT.md](./protocols/COMMIT.md)** | Rules for atomic, intention-based committing. |
-| **[RELEASE.md](./protocols/RELEASE.md)** | Systematic versioning logic (Phase 1-4). |
-| **[SECURITY.md](./protocols/SECURITY.md)** | Security audits and vulnerability management. |
-
----
-
-## ⚖️ License
+## ⚖️ Licensing & Legal
 
 Copyright © 2026 **Wistant**.  
-Distributed under the **Apache License 2.0**. See the [LICENSE](./LICENSE) file for the full legal text.
+Everything in this repository is licensed under the **Apache License 2.0**.
 
 ---
 
 <div align="center">
-  <p>Built with <img src="./assets/pnpm.svg" alt="pnpm" width="16" /> and <img src="./assets/npm.svg" alt="npm" width="16" /> for <b>@wistantkode</b></p>
+  <p>Engineered for <img src="./assets/dotfiles.png" width="16" /> with <b>@wistantkode</b></p>
 </div>
