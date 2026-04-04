@@ -50,7 +50,7 @@ Chaque commit doit suivre strictement ce format :
 [Footer]
 ```
 
-#### 1. Types Autorises
+### 1. Types Autorises
 
 - `feat`: Nouvelle fonctionnalite (ajoute de la valeur utilisateur).
 - `fix`: Correction de bug (repare quelque chose de casse).
@@ -62,7 +62,7 @@ Chaque commit doit suivre strictement ce format :
 - `chore`: Maintenance, build, dependances (pas de code de prod).
 - `style`: Formatage, espaces manquants (pas de changement de logique).
 
-#### 2. Scope (Portee)
+### 2. Scope (Portee)
 
 Le fichier ou module impacte. Exemples : `(auth)`, `(ui)`, `(deps)`, `(api)`, `(hooks)`.
 
