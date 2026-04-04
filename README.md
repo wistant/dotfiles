@@ -1,8 +1,21 @@
+# [@wistantkode/dotfiles](https://www.npmjs.com/package/@wistantkode/dotfiles)
+
 <div align="center">
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" valign="middle">
+        <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="100" />
+      </td>
+      <td align="center" valign="middle" style="padding: 0 40px;">
+        <img src="./assets/memoji.png" alt="Memoji" width="120" />
+      </td>
+      <td align="center" valign="middle">
+        <img src="./assets/dotfiles.png" alt="Dotfiles Logo" width="100" />
+      </td>
+    </tr>
+  </table>
   <br />
-  <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="160" />
-  <h1>@wistantkode/dotfiles</h1>
-  <p><b>Orchestrating AI-Driven Development through Professional Infrastructure</b></p>
+  <p><b>Precision AI-Pairing Infrastructure & Architectural Protocols</b></p>
   
   <p>
     <a href="https://www.npmjs.com/package/@wistantkode/dotfiles">
@@ -19,69 +32,63 @@
 
 ---
 
-## The Concept: AI-Driven Architecture
+## Infrastructure Orchestration
 
-Modern development is increasingly AI-pair-programmed. However, without strict guardrails, AI interactions often lead to repository entropy, messy commits, and inconsistent versioning. 
+This is more than a dotfiles collection; it is a **System of Governance** for AI-driven development workflows. By treating your environment as **Versioned Infrastructure**, you establish the necessary guardrails to ensure that AI-pair-programming remains precise, atomic, and secure.
 
-This repository provides the **Architectural Framework** necessary to pilot an AI effectively. It transforms a standard "dotfiles" collection into a set of **Instructional Protocols** that enforce engineering integrity at every step.
+### The System Advantage
+
+- **AI-Driven Logic**: The system is designed to "pilot" your AI assistant. It provides the architectural context and socratic protocols (`.protocols/`) required for high-end decision making.
+- **Atomic Reliability**: Every modification is routed through a verification cycle that prevents history pollution and mixed intentions.
+- **Universal Staging**: Powered by **pnpm**, **JavaScript (ESM)**, and **Shell orchestration**, the entire ecosystem is instantly deployable via `npx` or `pnpm dlx`.
 
 ---
 
-## Infrastructure Flow
-
-The system ensures that every modification is audited locally before reaching the public registry.
+## Operational Workflow
 
 ```mermaid
 graph TD
-    A[Local AI-Pairing] -- Socratic Audit --> B[Atomic Commit]
-    B -- github.sh Check --> C[GitHub Mirror]
-    C -- Version Tag --> D[GitHub Actions]
-    D -- Security Scan & Publish --> E[NPM Registry]
-    F[New Environment] -- npx installer --> E
+    A[Socratic AI-Pairing] -- Atomic Audit --> B[Local Commit Sequence]
+    B -- github.sh Gatekeeper --> C[GitHub Mirror]
+    C -- Automated CI/CD --> D[GitHub Actions]
+    D -- Security & Distribution --> E[NPM Global Registry]
+    F[Remote Deployment] -- pnpm dlx --> E
 ```
 
----
+### Core Automation Tools
 
-## Concrete Value & Assets
-
-### 1. AI Piloting Protocols (`.protocols/`)
-A hidden library of instructions that you inject into your AI-Pairing sessions to enforce professional standards:
-- **COMMIT.md**: Forces the AI to decompose complex changes into atomic, verifiable intentions.
-- **RELEASE.md**: A socratic dialogue to ensure semantic versioning (SemVer) reflects the technical reality.
-- **RODIN.md**: The engineering philosophy that prevents AI compliancy and focus-drift.
-
-### 2. Intelligent Synchronization (`github.sh`)
-An interactive script that acts as a final gatekeeper. It identifies uncommitted files and "Tag Deltas" (local versions not yet on GitHub) to prevent broken releases.
-
-### 3. Professional Templates
-- **Standardized `.gitignore`**: A production-ready model to avoid history pollution.
-- **`.gitmessage` Template**: A structured baseline for all commits, compatible with modern changelog generators.
-- **NPM Integration**: Every configuration is a versioned package, deployable via `npx` or `pnpm dlx`.
+1. **Interactive Sync (`github.sh`)**: A specialized gatekeeper that performs a "Tag Delta" audit, ensuring local versions and remote states are synchronized before any projection.
+2. **System Protocols**: A library of hidden guides that force the AI to maintain professional standards (Atomic commits, Socratic releases, Security first).
+3. **Automated Distribution**: GitHub Actions handle the security auditing and global NPM publication upon Every GitHub Release.
 
 ---
 
-## Deployment
+## Practical Implementation
 
-Initialize your AI-driven environment on any Linux system:
+Deploy your architectural baseline anywhere:
 
 ```bash
 pnpm dlx @wistantkode/dotfiles
 ```
 
+### Included Assets
+- **Professional `.gitignore`**: PRODUCTION-READY baseline for all modern stacks.
+- **`.gitmessage` Architectural Template**: Standardizes commit intentions across teams.
+- **Governance Library**: Injected `.protocols/` folder for immediate AI alignment.
+
 ---
 
-## Standards Registry
+## Engineering Standards
 
-| Component | Role | Link |
+| Standard | Role | Reference |
 | :--- | :--- | :--- |
-| **Integrity Standards** | Engineering philosophy and socratic audit rules. | [RODIN.md](./protocols/RODIN.md) |
-| **Commit Rules** | Atomic formatting and Zero-Entropy guardrails. | [COMMIT.md](./protocols/COMMIT.md) |
-| **Release Logic** | Step-by-step SemVer validation and sealing. | [RELEASE.md](./protocols/RELEASE.md) |
-| **Security Audit** | Vulnerability scanning and secret management. | [SECURITY.md](./protocols/SECURITY.md) |
+| **Integrity Audit** | High-level engineering and architectural philosophy. | [RODIN.md](./protocols/RODIN.md) |
+| **Commit Protocol** | Strict atomic formatting and zero-entropy staging. | [COMMIT.md](./protocols/COMMIT.md) |
+| **Release Flow** | Socratic versioning and manual sealing logic. | [RELEASE.md](./protocols/RELEASE.md) |
 
 ---
 
-## Licensing
+## License
 
 Copyright © 2026 **Wistant**. Distributed under the **Apache License 2.0**.
 
