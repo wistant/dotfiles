@@ -1,25 +1,27 @@
 <div align="center">
-  <img src="./assets/logo.png" alt="Dotfiles Logo" width="180" />
+  <img src="./assets/logo.png" alt="Dotfiles Logo" width="240" />
 
 # Precision Dotfiles Infrastructure
 
-  [ Automated Orchestration • AI-Driven Logic • Governance Protocols • CLI Distribution ]
+  [ Automated Orchestration • AI-Driven Logic • System Governance • CLI Distribution ]
 
   <p>
-    <a href="https://www.npmjs.com/package/@wistantkode/dotfiles">
-      <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=for-the-badge&color=CC0000&logo=npm" alt="npm version" />
-    </a>
     <a href="https://pnpm.io">
-      <img src="https://img.shields.io/badge/pnpm-4AB6FA?style=for-the-badge&logo=pnpm&logoColor=white" alt="pnpm" />
+       <img src="https://img.shields.io/badge/pnpm-4AB6FA?style=for-the-badge&logo=pnpm&logoColor=white" alt="pnpm" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+       <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="javascript" />
+    </a>
+    <a href="https://www.npmjs.com/package/@wistantkode/dotfiles">
+       <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
+    </a>
+    <a href="https://github.com/wistant/dotfiles/actions">
+       <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="github actions" />
     </a>
     <a href="https://github.com/wistant/dotfiles/releases">
-      <img src="https://img.shields.io/badge/Release-v1.6.0-blue?style=for-the-badge&logo=github" alt="GitHub release" />
+       <img src="https://img.shields.io/badge/Release-v1.7.0-blue?style=for-the-badge&logo=github" alt="GitHub release" />
     </a>
   </p>
-
-  [![Commit Protocol](https://img.shields.io/badge/Protocol-COMMIT-black?style=flat-square&logo=gitbook&logoColor=white)](./protocols/COMMIT.md)
-  [![Release Protocol](https://img.shields.io/badge/Protocol-RELEASE-black?style=flat-square&logo=gitbook&logoColor=white)](./protocols/RELEASE.md)
-  [![Security Protocol](https://img.shields.io/badge/Protocol-SECURITY-black?style=flat-square&logo=gitbook&logoColor=white)](./protocols/SECURITY.md)
 
 </div>
 
@@ -30,16 +32,24 @@
 This repository is not just a collection of configs; it is a **Living Governance System**. Every interaction between the Architect and the AI is filtered through a rigorous protocol stack.
 
 ```mermaid
-graph TD
-    A[Architect Request] --> B{Verification Cycle}
-    B -- Protocol Audit --> C[Technical Logic]
-    C -- Separation Mode --> D[Atomic Implementation]
-    D -- History Guard --> E[Versioned State]
-    E -- Sync Process --> F[NPM Distribution]
-    F -- CLI Engine --> G[System Deployment]
+graph LR
+    subgraph "Engineering & Governance"
+        SE[Software Engineer] --> PR[Protocols & Registry]
+    end
 
-    style B fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#00ff,stroke:#fff,stroke-width:2px,color:#fff
+    subgraph "Automation Core"
+        PR --> CLI[CLI Orchestrator]
+        PR --> SYNC[Sync Engine]
+    end
+
+    subgraph "Deployment Lifecycle"
+        CLI --> OS[System Deployment]
+        SYNC --> GIT[Git Integrity]
+        GIT --> NPM[NPM Distribution]
+    end
+
+    style SE fill:#fff,stroke:#333,stroke-width:2px
+    style NPM fill:#000,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### Core Automation Tools
@@ -81,11 +91,11 @@ pnpm dlx @wistantkode/dotfiles
 
 ## Contributors
 
-The project is currently orchestrated by its lead architect. New contributions are welcome to expand the baseline.
+The project is currently orchestrated by its lead software engineer. New contributions are welcome to expand the baseline.
 
 <p align="left">
   <a href="https://github.com/wistant">
-    <img src="https://github.com/wistant.png?size=100" width="100" height="100" alt="wistant" title="Lead Architect"/>
+    <img src="https://github.com/wistant.png?size=100" width="50" height="50" alt="wistant" title="Wistant"/>
   </a>
 </p>
 
@@ -93,7 +103,7 @@ The project is currently orchestrated by its lead architect. New contributions a
 
 ## Community
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to join the **clawtributors** and submit PRs.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to join the **contributors** and submit PRs.
 AI/vibe-coded PRs welcome! 🤖
 
 ---
@@ -103,7 +113,3 @@ AI/vibe-coded PRs welcome! 🤖
 Copyright © 2026 **Wistant**. Distributed under the **Apache License 2.0**.
 
 ---
-
-<div align="center">
-  <b>Designed for the 0.1% — Engineered by @wistant</b>
-</div>
