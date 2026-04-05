@@ -2,9 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2026-04-05 - [Vellum & Void Integrity]
+
+### Added
+
+- **Formal Governance**: Integrated professional `CONTRIBUTING.md` and `SECURITY.md` root-level guides, transitioning from internal metaphors to standard engineering contracts.
+- **Community Infrastructure**: Added a dedicated Community section with a high-fidelity contributor avatar grid and refined attribution.
+
+### Changed
+
+- **Architectural Mapping**: Migrated the CLI entry point from `bin/` to `cli/` to align with modern package distribution standards.
+- **Technical Sanitization**: Purged all metaphorical terminology (Rodin, Socratic, Audit) from public-facing documentation in favor of professional engineering nomenclature.
+- **Visual Engineering**: Redesigned the `README.md` signature header and updated the technical verification workflow diagram (Mermaid).
+- **Hardening**: Refined the implementation of Zero-Trust principles in the root security policy.
+
 ## [1.5.0] - 2026-04-05 - [Iron Gate & Neon Dash]
 
 ### Added
+
 - **Protocol Hardening**: Integrated strict "Zero-Initiative" and "Separation of Concerns" rules into `RODIN.md` and `COMMIT.md`. AI is now formally forbidden from touching release artifacts outside of Release mode.
 - **Elite UI Overhaul**: Complete refactor of `github.sh` and `bin/cli.mjs` with premium 256-color aesthetics, box-drawing tables, and animated progress bars.
 - **Enhanced Gatekeeping**: `github.sh` now performs a silent tag-delta audit and forces manual confirmation on production branches.
