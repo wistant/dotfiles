@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2026-04-05 - [Interactive Orchestration & Anonymization]
+
+### Added
+
+- **Interactive CLI**: Full `node:readline` orchestration for deployment.
+- **Directory Audit**: Preventive scan for existing files in target directory.
+- **Protocol Placement**: Dynamic selection between `.protocols/` (recommended) and root.
+- **Full Anonymization**: Removal of all personal identity and authorship markers.
+
 ## [1.6.0] - 2026-04-05 - [Vellum & Void Integrity]
 
 ### Added
