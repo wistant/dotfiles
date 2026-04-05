@@ -73,8 +73,8 @@ pnpm dlx @wistantkode/dotfiles
 
 ### Included Assets
 - **Professional `.gitignore`**: PRODUCTION-READY baseline for all modern stacks.
-- **`.gitmessage` Architectural Template**: Standardizes commit intentions across teams.
-- **Governance Library**: Injected `.protocols/` folder for immediate AI alignment.
+- **Security & Integrity**: Injected `.protocols/` folder for immediate AI alignment.
+- **Universal License**: Apache 2.0 baseline for all technical distributions.
 
 ---
 
@@ -82,9 +82,12 @@ pnpm dlx @wistantkode/dotfiles
 
 | Standard | Role | Reference |
 | :--- | :--- | :--- |
-| **Integrity Audit** | High-level engineering and architectural philosophy. | [RODIN.md](./protocols/RODIN.md) |
+| **Audit Philosophy** | Socratic auditing and architectural integrity. | [RODIN.md](./protocols/RODIN.md) |
 | **Commit Protocol** | Strict atomic formatting and zero-entropy staging. | [COMMIT.md](./protocols/COMMIT.md) |
 | **Release Flow** | Socratic versioning and manual sealing logic. | [RELEASE.md](./protocols/RELEASE.md) |
+| **Security First** | Vulnerability audits and secret scanning protocols. | [SECURITY.md](./protocols/SECURITY.md) |
+
+> See [_INDEX.md](./protocols/_INDEX.md) for the full library of orchestration protocols.
 
 ---
 
