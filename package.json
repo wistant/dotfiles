@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "dotfiles": "bin/cli.mjs"
+    "dotfiles": "cli/cli.mjs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
