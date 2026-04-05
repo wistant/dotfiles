@@ -9,6 +9,7 @@
 import { copyFile, mkdir, readdir, lstat } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createInterface } from 'node:readline/promises';
 
 // ── UI Configuration (256-color) ──────────────────────────────────────
 const RESET    = '\x1b[0m';
@@ -25,13 +26,6 @@ const BLUE     = '\x1b[38;5;75m';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgRoot = join(__dirname, '..');
-
-// ── Asset Mapping ─────────────────────────────────────────────────────
-const ASSETS = [
-  { src: 'gitignore', dest: '.gitignore', label: 'Ignore patterns' },
-  { src: 'LICENSE', dest: 'LICENSE', label: 'License' },
-  { src: 'protocols', dest: '.protocols', label: 'Governance protocols', isDir: true }
-];
 
 // ── Layout Components ─────────────────────────────────────────────────
 
@@ -67,16 +61,38 @@ const renderSignature = () => {
   console.log(`  ${DGRAY}┌${_rep(width, '──')}┐${RESET}`);
   
   const label = (txt, col) => `${col}${BOLD}${txt}${RESET}`;
-  const info = (txt) => `${GRAY}${txt}${RESET}`;
 
   console.log(`  ${DGRAY}│${RESET}  ${pad(`${label('REPOSITORY', BLUE)}  ${BOLD}https://github.com/wistant/dotfiles${RESET}`, width + 17)} ${DGRAY}│${RESET}`);
   console.log(`  ${DGRAY}├${_rep(width, '──')}┤${RESET}`);
   console.log(`  ${DGRAY}│${RESET}  ${pad(`${label('ARCHITECT ', WHITE)}  ${BOLD}Wistant${RESET} ${GRAY}(DevOps Architect)${RESET}`, width + 28)} ${DGRAY}│${RESET}`);
   console.log(`  ${DGRAY}│${RESET}  ${pad(`${label('GITHUB    ', BLUE)}  ${GRAY}https://github.com/wistant${RESET}`, width + 26)} ${DGRAY}│${RESET}`);
-  console.log(`  ${DGRAY}│${RESET}  ${pad(`${label('X         ', CYAN)}  ${GRAY}https://x.com/wistant${RESET}`, width + 26)} ${DGRAY}│${RESET}`);
-  console.log(`  ${DGRAY}│${RESET}  ${pad(`${label('LINKEDIN  ', BLUE)}  ${GRAY}https://linkedin.com/in/wistant${RESET}`, width + 26)} ${DGRAY}│${RESET}`);
   console.log(`  ${DGRAY}└${_rep(width, '──')}┘${RESET}\n`);
 };
+
+// ── Interactive Logic ─────────────────────────────────────────────────
+
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const ask = async (question, defaultYes = true) => {
+  const options = defaultYes ? ' (Y/n)' : ' (y/N)';
+  const answer = await rl.question(`  ${YELLOW}${BOLD}?${RESET}  ${question}${GRAY}${options}${RESET}  `);
+  if (!answer) return defaultYes;
+  return answer.toLowerCase().startsWith('y');
+};
+
+async function checkDirectory(dir) {
+  try {
+    const files = await readdir(dir);
+    // Ignore common development/system noise
+    const filtered = files.filter(f => !['.git', 'node_modules', '.DS_Store', 'package-lock.json', 'pnpm-lock.yaml'].includes(f));
+    return filtered.length > 0;
+  } catch {
+    return false;
+  }
+}
 
 // ── Core Engine ───────────────────────────────────────────────────────
 
@@ -100,11 +116,44 @@ async function run() {
   sep();
 
   const targetDir = process.cwd();
-  console.log(`\n  ${GRAY}System Target:${RESET}  ${WHITE}${BOLD}${targetDir}${RESET}\n`);
+  console.log(`\n  ${GRAY}System Target:${RESET}  ${WHITE}${BOLD}${targetDir}${RESET}`);
   
-  sep();
-  console.log(`\n  ${BOLD}▶  Initiating deployment sequence...${RESET}\n`);
+  // Phase 1: Directory Audit
+  if (await checkDirectory(targetDir)) {
+    console.log(`  ${YELLOW}${BOLD}⚠  TARGET DIRECTORY IS NOT EMPTY${RESET}`);
+    const proceed = await ask('Deployment may overwrite existing files. Proceed?', false);
+    if (!proceed) {
+      console.log(`\n  ${RED}Deployment cancelled by user.${RESET}\n`);
+      rl.close();
+      return;
+    }
+  }
 
+  // Phase 2: Protocol Selection
+  let protocolDest = '.protocols';
+  console.log(`\n  ${CYAN}${BOLD}i  GOVERNANCE PLACEMENT${RESET}`);
+  const useDotDir = await ask('Deploy protocols to .protocols/ folder? (Recommended)', true);
+  if (!useDotDir) {
+    protocolDest = 'protocols';
+    console.log(`  ${DIM}Protocols will be deployed to the root 'protocols/' directory.${RESET}`);
+  }
+
+  const ASSETS = [
+    { src: 'gitignore', dest: '.gitignore', label: 'Ignore patterns' },
+    { src: 'LICENSE', dest: 'LICENSE', label: 'License' },
+    { src: 'protocols', dest: protocolDest, label: 'Governance protocols', isDir: true }
+  ];
+
+  sep();
+  console.log(`\n  ${BOLD}▶  Ready to initiate deployment sequence...${RESET}`);
+  const confirm = await ask('Apply changes to your system?', true);
+  if (!confirm) {
+    console.log(`\n  ${RED}Deployment aborted.${RESET}\n`);
+    rl.close();
+    return;
+  }
+
+  console.log('');
   await progress('Validating package integrity');
 
   const deployedFiles = [];
@@ -145,9 +194,12 @@ async function run() {
   console.log(`  ${DIM}Thank you for choosing high-end architectural standards.${RESET}\n`);
   sep();
   console.log('');
+  
+  rl.close();
 }
 
 run().catch(err => {
   console.error(`\n  ${RED}${BOLD}✗  FATAL ERROR${RESET}  ${err.message}\n`);
+  if (rl) rl.close();
   process.exit(1);
 });
