@@ -118,10 +118,20 @@ async function run() {
   const targetDir = process.cwd();
   console.log(`\n  ${GRAY}System Target:${RESET}  ${WHITE}${BOLD}${targetDir}${RESET}`);
   
+  const proceedTarget = await ask('Initiate deployment in this directory?', true);
+  if (!proceedTarget) {
+    console.log(`\n  ${RED}Deployment cancelled by user.${RESET}\n`);
+    rl.close();
+    return;
+  }
+
   // Phase 1: Directory Audit
-  if (await checkDirectory(targetDir)) {
+  const isEmpty = !(await checkDirectory(targetDir));
+  if (isEmpty) {
+    console.log(`  ${GREEN}${BOLD}✔  TARGET DIRECTORY IS CLEAN${RESET}`);
+  } else {
     console.log(`  ${YELLOW}${BOLD}⚠  TARGET DIRECTORY IS NOT EMPTY${RESET}`);
-    const proceed = await ask('Deployment may overwrite existing files. Proceed?', false);
+    const proceed = await ask('Deployment may overwrite existing files. Force installation?', false);
     if (!proceed) {
       console.log(`\n  ${RED}Deployment cancelled by user.${RESET}\n`);
       rl.close();
@@ -135,7 +145,9 @@ async function run() {
   const useDotDir = await ask('Deploy protocols to .protocols/ folder? (Recommended)', true);
   if (!useDotDir) {
     protocolDest = 'protocols';
-    console.log(`  ${DIM}Protocols will be deployed to the root 'protocols/' directory.${RESET}`);
+    console.log(`  ${DIM}Protocols will be deployed to 'protocols/' (Visibility Mode).${RESET}`);
+  } else {
+    console.log(`  ${DIM}Protocols will be deployed to '.protocols/' (Architecture Standard).${RESET}`);
   }
 
   const ASSETS = [
