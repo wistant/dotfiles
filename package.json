@@ -1,6 +1,6 @@
 {
   "name": "@wistantkode/dotfiles",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "High-End Linux Infrastructure & AI-Driven Orchestration Protocols",
   "main": "index.js",
   "type": "module",

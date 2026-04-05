@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2026-04-05 - [Community-Grade Governance]
+
+### Added
+
+- **Complete Protocol Index**: `_INDEX.md` expanded from 5 to 9 entries, covering all protocols (`INIT`, `REFACTOR`, `TEST`, `DOTFILES`).
+- **Activation Triggers**: `RODIN.md` and `INIT.md` now include explicit `[!IMPORTANT]` activation blocks for unambiguous agent invocation.
+- **Generalized Security Phase**: `SECURITY.md` Phase 3 now covers JWT, HMAC, OAuth, and data isolation patterns beyond Prisma-specific scope.
+
+### Changed
+
+- **Community-Grade Rewrite**: `github.sh` fully rewritten in technical English with system-style labels (`[ABORT]`, `[WARNING]`, `[PUSH]`, `[GATE]`). All personal/informal language removed.
+- **Stack-Agnostic Protocols**: `ASSIST.md` operational modes decoupled from specific stacks (Next.js, Tailwind, Shadcn). Now applicable to any engineering context.
+- **Cross-Reference Integrity**: All protocol cross-references in `ASSIST.md` and `_INDEX.md` are now complete and consistent.
+- **RODIN.md**: Rewritten in English, neutral community tone. Suitable for external contributors.
+- **RELEASE.md**: Monorepo path references generalized to support both single-package and workspace architectures.
+
+### Removed
+
+- **`gitmessage` template**: Superseded by the `COMMIT.md` protocol. Removed to eliminate redundancy.
+
 ## [1.3.0] - 2026-04-04 - [Architectural Identity & AI Orchestration]
 
 ### Added
