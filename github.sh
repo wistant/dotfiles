@@ -86,7 +86,7 @@ LOCAL_ONLY_TAGS=$(
 TAG_COUNT=0
 [ -n "$LOCAL_ONLY_TAGS" ] && TAG_COUNT=$(echo "$LOCAL_ONLY_TAGS" | grep -c .)
 PUSH_TAGS=""
-[ "$TAG_COUNT" -gt 0 ] && PUSH_TAGS="--tags"
+[ "$TAG_COUNT" -gt 0 ] && PUSH_TAGS="--follow-tags"
 
 case "$CURRENT_BRANCH" in
     main|master) BLABEL="${RED}${BOLD}⬡  PRODUCTION${RESET}" ;;
