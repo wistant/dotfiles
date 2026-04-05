@@ -1,22 +1,10 @@
-# [@wistantkode/dotfiles](https://www.npmjs.com/package/@wistantkode/dotfiles)
-
 <div align="center">
-  <table border="0" cellpadding="0" cellspacing="0">
-    <tr>
-      <td align="center" valign="middle">
-        <img src="./assets/wistant-logo.png" alt="Wistant Logo" width="100" />
-      </td>
-      <td align="center" valign="middle" style="padding: 0 40px;">
-        <img src="./assets/memoji.png" alt="Memoji" width="120" />
-      </td>
-      <td align="center" valign="middle">
-        <img src="./assets/dotfiles.png" alt="Dotfiles Logo" width="100" />
-      </td>
-    </tr>
-  </table>
-  <br />
-  <p><b>Precision AI-Pairing Infrastructure & Architectural Protocols</b></p>
-  
+  <img src="./assets/logo.png" alt="Dotfiles Logo" width="180" />
+
+# Precision Dotfiles Infrastructure
+
+  [ Automated Orchestration • Governance Protocols • CLI Distribution ]
+
   <p>
     <a href="https://www.npmjs.com/package/@wistantkode/dotfiles">
       <img src="https://img.shields.io/npm/v/@wistantkode/dotfiles?style=for-the-badge&color=CC0000&logo=npm" alt="npm version" />
@@ -28,31 +16,30 @@
       <img src="https://img.shields.io/badge/License-Apache_2.0-F47023?style=for-the-badge" alt="License" />
     </a>
   </p>
+
+  [![Commit Protocol](https://img.shields.io/badge/Protocol-COMMIT-black?style=flat-square&logo=gitbook&logoColor=white)](./protocols/COMMIT.md)
+  [![Release Protocol](https://img.shields.io/badge/Protocol-RELEASE-black?style=flat-square&logo=gitbook&logoColor=white)](./protocols/RELEASE.md)
+  [![Security Protocol](https://img.shields.io/badge/Protocol-SECURITY-black?style=flat-square&logo=gitbook&logoColor=white)](./protocols/SECURITY.md)
+
 </div>
 
 ---
 
-## Infrastructure Orchestration
+## 🛠 Architectural Orchestration
 
-This is more than a dotfiles collection; it is a **System of Governance** for AI-driven development workflows. By treating your environment as **Versioned Infrastructure**, you establish the necessary guardrails to ensure that AI-pair-programming remains precise, atomic, and secure.
-
-### The System Advantage
-
-- **AI-Driven Logic**: The system is designed to "pilot" your AI assistant. It provides the architectural context and socratic protocols (`.protocols/`) required for high-end decision making.
-- **Atomic Reliability**: Every modification is routed through a verification cycle that prevents history pollution and mixed intentions.
-- **Universal Staging**: Powered by **pnpm**, **JavaScript (ESM)**, and **Shell orchestration**, the entire ecosystem is instantly deployable via `npx` or `pnpm dlx`.
-
----
-
-## Operational Workflow
+This repository is not just a collection of configs; it is a **Living Governance System**. Every interaction between the Architect and the AI is filtered through a rigorous protocol stack.
 
 ```mermaid
 graph TD
-    A[Socratic AI-Pairing] -- Atomic Audit --> B[Local Commit Sequence]
-    B -- github.sh Gatekeeper --> C[GitHub Mirror]
-    C -- Automated CI/CD --> D[GitHub Actions]
-    D -- Security & Distribution --> E[NPM Global Registry]
-    F[Remote Deployment] -- pnpm dlx --> E
+    A[Architect Request] --> B{Verification Cycle}
+    B -- Protocol Audit --> C[Technical Logic]
+    C -- Separation Mode --> D[Atomic Implementation]
+    D -- History Guard --> E[Versioned State]
+    E -- Sync Process --> F[NPM Distribution]
+    F -- CLI Engine --> G[System Deployment]
+
+    style B fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#00ff,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### Core Automation Tools
@@ -72,6 +59,7 @@ pnpm dlx @wistantkode/dotfiles
 ```
 
 ### Included Assets
+
 - **Professional `.gitignore`**: PRODUCTION-READY baseline for all modern stacks.
 - **Security & Integrity**: Injected `.protocols/` folder for immediate AI alignment.
 - **Universal License**: Apache 2.0 baseline for all technical distributions.
@@ -97,6 +85,14 @@ Copyright © 2026 **Wistant**. Distributed under the **Apache License 2.0**.
 
 ---
 
+## 👥 Contributors
+
+Built for high-end engineering and precision AI-pairing.
+
+- **[Wistant](https://github.com/wistant)** — Lead Architect & DevOps Specialist
+- **[Antigravity](https://github.com/antigravity)** — AI Orchestrator
+
+---
 <div align="center">
-  <p>Engineered for professional AI-Pairing by <b>@wistantkode</b></p>
+  <b>Designed for the 0.1% — Engineered by @wistant</b>
 </div>
