@@ -6,14 +6,18 @@
 
 ---
 
-## Regle d'Or : Zero "git add ."
+### Règle d'Or 1 : Zéro "git add ."
 
 Il est **STRICTEMENT INTERDIT** d'utiliser `git add .` ou `git commit -a`.
-Chaque modification doit etre atomique. On ne melange pas la logique métier (`core/`) et le style (`ui/`).
+Chaque modification doit être atomique. On ne mélange pas la logique métier (`core/`) et le style (`ui/`).
 
-> [!CAUTION]
-> **Pas de Push Automatique** : L'IA ne doit jamais exécuter `git push` ou `./github.sh`.
-> Après le commit, l'IA s'arrête. Le USER valide et pousse manuellement.
+### Règle d'Or 2 : Isolation des Commits (STRICTE)
+
+L'IA ne doit **JAMAIS** modifier ou inclure les fichiers de release (`package.json`, `CHANGELOG.md`, `pom.xml`, etc.) ni manipuler les `git tags` lors d'une phase de commit classique. Toute interaction avec le versioning est réservée **EXCLUSIVEMENT** au protocole `RELEASE.md`.
+
+### Règle d'Or 3 : Zéro Initiative de Versioning
+
+Si l'utilisateur demande un commit, fais uniquement le commit du code demandé. Ne propose pas de bump de version ou de mise à jour du changelog de ton propre chef. Ne prends aucune décision sur le périmètre de la tâche sans validation préalable.
 
 ---
 
