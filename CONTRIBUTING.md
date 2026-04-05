@@ -1,16 +1,51 @@
 # Contributing to Dotfiles Infrastructure
 
-We welcome contributions to this architectural baseline. To maintain the integrity of the system, please follow these protocols:
-
-## PR Guidelines
-
-1. **Atomic Logic**: Each PR must address a single technical concern.
-2. **Protocol Alignment**: Updates must be compatible with the existing governance stack (COMMIT, RELEASE, SECURITY).
-3. **AI-Pairing**: Human-AI collaboration is encouraged ("vibe-coding"). Please document the collaboration logic if relevant.
-
-## Maintenance
-
-The repository is maintained by **Wistant**. Major architectural shifts require direct coordination.
+This repository is governed by strict **Architectural Validation**. To maintain technical excellence, every contribution must align with our core engineering baseline. Precision and structural integrity are non-negotiable.
 
 ---
-**Engineered for the 0.1% — Managed by @wistant**
+
+## ⚡ Technical Pillars
+
+### 1. Atomic Integrity
+
+We maintain a linear, pure history. PRs must represent a single, isolated logical intention.
+
+- **Manual Staging**: The use of `git add .` is prohibited. Every staging must be targeted (`git add <file>`).
+- **No Hybrid Commits**: Do not mix refactoring (`refactor`) with functional additions (`feat`) in the same commit.
+- **Separation of Powers**: Release manifests (`package.json`, `CHANGELOG.md`) and Git Tags are strictly reserved for the **Release Protocol**. They must never be part of a standard code commit.
+
+### 2. Architectural Governance
+
+Your interaction with the codebase is a technical review, not a service.
+
+- **Critical Assessment**: Contributors (Human or AI) must provide technical justification for every change. Blind validation is a protocol failure.
+- **Zero-Initiative**: Decision-making is limited to the explicit scope of the requested task. Unauthorized modification of non-cited components is forbidden.
+- **Impact-Based SemVer**: Versioning must be mathematically justified by the code impact analyzed during the release phase.
+
+### 3. AI-Pairing Standards
+
+We recognize AI as a technical peer. Contributions co-authored by an agent must:
+
+- Maintain a direct, technical, and objective tone.
+- Be verified by the **Architect (Human)** at every execution gate.
+- **The Verification Barrier**: The agent must prompt for human confirmation of the versioning logic before final execution.
+
+---
+
+## Development Lifecycle
+
+### Phase 1: Code Implementation
+
+Follow the **Commit Convention**. Use strict prefixes (`feat`, `fix`, `refactor`, `style`, `ui`, `docs`).
+
+### Phase 2: Infrastructure Deployment
+
+Deployment follows the **Architectural Release** flow. Every release must be sealed with a unique identifier: `vX.Y.Z - [MOTTO]`.
+
+---
+
+## 👥 Maintenance
+
+Managed by **Wistant** — Lead Architect.
+
+---
