@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-04-05 - [Iron Gate & Neon Dash]
+
+### Added
+- **Protocol Hardening**: Integrated strict "Zero-Initiative" and "Separation of Concerns" rules into `RODIN.md` and `COMMIT.md`. AI is now formally forbidden from touching release artifacts outside of Release mode.
+- **Elite UI Overhaul**: Complete refactor of `github.sh` and `bin/cli.mjs` with premium 256-color aesthetics, box-drawing tables, and animated progress bars.
+- **Enhanced Gatekeeping**: `github.sh` now performs a silent tag-delta audit and forces manual confirmation on production branches.
+
 ## [1.4.0] - 2026-04-05 - [Community-Grade Governance]
 
 ### Added
