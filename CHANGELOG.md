@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.1] - 2026-04-05 - [High-Fidelity Restoration]
+
+### Added
+
+- **High-Fidelity UI**: Block progress bars (`█`) and CYAN/YELLOW color accents for a premium feel.
+- **Branded Signature**: Integrated an interactive authorship and source information table.
+- **Enhanced Orchestration**: Two-stage directory confirmation and state-aware audit feedback.
+- **Protocol Governance**: Logic refinement for `.protocols/` folder selection with architectural recommendations.
+
 ## [1.7.0] - 2026-04-05 - [Interactive Orchestration & Anonymization]
 
 ### Added
