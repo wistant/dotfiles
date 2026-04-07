@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.2] - 2026-04-07 - [Architectural Symmetry]
+
+### Changed
+
+- **Modular Infrastructure**: Decoupled the monolithic `cli.mjs` into specialized components (`engine`, `ui`, `constants`, `assets`).
+- **Asset Migration**: Consolidated root-level configuration assets into a structured `data/` directory.
+- **UI Componentization**: Isolated `renderLogo` and `renderSignature` into reusable modules for improved maintainability.
+- **Icon Centralization**: Unified all UI tokens and interactive emojis into a single source of truth (`constants.mjs`).
+
 ## [1.7.1] - 2026-04-05 - [High-Fidelity Restoration]
 
 ### Added
